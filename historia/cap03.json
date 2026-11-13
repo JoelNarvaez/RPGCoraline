@@ -1,0 +1,307 @@
+{
+  "capitulo": 3,
+  "titulo": "El otro departamento",
+  "responsable": "Persona A",
+  "nodos": {
+    "cap03_n01": {
+      "texto": "Al día siguiente su mamá la lleva al centro a comprar ropa para la escuela. Coraline se enamora de unos guantes verdes fosforescentes, pero su mamá escoge camisas grises, iguales a las de todos los demás niños.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Resignarse y volver a casa con la ropa gris",
+          "destino": "cap03_n02",
+          "canonica": true
+        },
+        {
+          "texto": "Insistir en los guantes verdes",
+          "destino": "cap03_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap03_r01": {
+      "texto": "[ESQUELETO DE RAMA] Su mamá se niega. Coraline va enfurruñada todo el camino de regreso, pensando que nadie la escucha nunca.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n02",
+          "canonica": true
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap03_n02": {
+      "texto": "En casa, su mamá sale otra vez a hacer compras y la deja sola. El departamento está en silencio. Coraline recuerda la puerta del salón y la llave negra en lo alto de la cocina.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Subirse a una silla y tomar la llave negra",
+          "destino": "cap03_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            },
+            "agregar_objetos": [
+              "llave_negra"
+            ]
+          }
+        },
+        {
+          "texto": "Quedarse viendo la tele hasta que regrese su mamá",
+          "destino": "cap03_r02",
+          "canonica": false,
+          "efectos": {
+            "agregar_objetos": [
+              "llave_negra"
+            ]
+          }
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap03_r02": {
+      "texto": "[ESQUELETO DE RAMA] Pasa una hora y su mamá no regresa. La llave negra no se le quita de la cabeza. Al final se sube a una silla y la toma.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            },
+            "agregar_objetos": [
+              "llave_negra"
+            ]
+          }
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap03_m01": {
+      "texto": "La llave negra está helada y pesa más de lo que parece. La cerradura de la puerta del salón está al otro lado del cuarto.",
+      "canonico": true,
+      "imagen": "salon.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "arrastrar",
+        "instruccion": "Arrastra la llave negra hasta la cerradura y suéltala ahí.",
+        "tiempo": 15,
+        "objeto": "llave",
+        "zona": "cerradura",
+        "exito": {
+          "destino": "cap03_n03"
+        },
+        "fallo": {
+          "destino": "cap03_m01",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap03_n03": {
+      "texto": "Abre la puerta del salón. Esta vez no hay ladrillos: hay un pasillo oscuro y frío que huele a humedad, como un sótano viejo. Al fondo se ve una luz débil.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Cruzar el pasillo",
+          "destino": "cap03_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Cerrar la puerta y dejar la llave en su lugar",
+          "destino": "cap03_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Mirar el pasillo a través de la piedra",
+          "destino": "cap03_r04",
+          "canonica": false,
+          "requiere": {
+            "objetos": [
+              "piedra_con_agujero"
+            ]
+          },
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -2
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap03_r03": {
+      "texto": "[ESQUELETO DE RAMA] Coraline cierra la puerta y se sienta en el sillón. Pero la curiosidad le gana: a los cinco minutos vuelve a abrir y cruza el pasillo.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap03_r04": {
+      "texto": "[ESQUELETO DE RAMA] Por el agujero de la piedra, las paredes del pasillo parecen respirar. Coraline traga saliva y avanza de todos modos.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap03_n04": {
+      "texto": "Al final del pasillo hay un departamento idéntico al suyo, pero más bonito. En la cocina, una mujer igual a su mamá cocina pollo asado. Solo que es más alta, más pálida, y en lugar de ojos tiene dos botones negros. Le dice que es su otra madre.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Sentarse a comer con ella",
+          "destino": "cap03_n05",
+          "canonica": true
+        },
+        {
+          "texto": "Salir corriendo de regreso",
+          "destino": "cap03_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap03_r05": {
+      "texto": "[ESQUELETO DE RAMA] Coraline da media vuelta, pero el olor de la comida la detiene en el pasillo. Tiene muchísima hambre. Regresa despacio a la cocina.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n05",
+          "canonica": true
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap03_n05": {
+      "texto": "Es la mejor comida que ha probado en su vida. Llega el otro padre, también con ojos de botón, y le sonríe. Le enseñan su otro cuarto: juguetes que caminan solos, dinosaurios de cuerda que vuelan. Desde los rincones, unas ratas negras la observan.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Quedarse a jugar en el otro cuarto",
+          "destino": "cap03_n06",
+          "canonica": true
+        },
+        {
+          "texto": "Preguntar por qué tienen botones en los ojos",
+          "destino": "cap03_r06",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap03_r06": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre se ríe como si fuera una pregunta muy tonta y le sirve más postre. Las ratas chillan desde el rincón.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n06",
+          "canonica": true
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap03_n06": {
+      "texto": "La otra madre le dice que puede quedarse ahí para siempre. Coraline contesta que primero quiere salir a explorar. Los otros padres la despiden en la puerta, con sonrisas idénticas, moviendo la mano despacio.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Salir a explorar afuera",
+          "destino": "cap04_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Decir que se quedará para siempre",
+          "destino": "cap03_r07",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -2
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap03_r07": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre la abraza y le dice que mañana hablarán de los detalles. Esa palabra, detalles, le da a Coraline un escalofrío. Se zafa del abrazo y sale.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap04_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    }
+  }
+}

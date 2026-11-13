@@ -1,0 +1,258 @@
+{
+  "capitulo": 1,
+  "titulo": "La puerta del salón",
+  "responsable": "Persona A",
+  "nodos": {
+    "cap01_n01": {
+      "texto": "Coraline y sus padres acaban de mudarse a una casona vieja dividida en departamentos. Abajo viven dos actrices retiradas con un montón de perros; arriba, un anciano de bigote enorme que dice estar entrenando un circo de ratones. Sus papás pasan el día frente a la computadora y nadie tiene tiempo para ella.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Salir a explorar el jardín",
+          "destino": "cap01_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Quedarse en su cuarto viendo la tele",
+          "destino": "cap01_r01",
+          "canonica": false
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap01_r01": {
+      "texto": "[ESQUELETO DE RAMA] Coraline cambia de canal una y otra vez. Nada le interesa. Al final se pone las botas y sale a explorar de todos modos.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap01_n02": {
+      "texto": "En el jardín encuentra una cancha de tenis abandonada, rosales secos y, escondido entre la hierba alta, un pozo muy antiguo. Las vecinas le advirtieron que nadie sabe qué tan hondo es. Coraline lo rodea con cuidado.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Marcar el borde del pozo con palos y alejarse",
+          "destino": "cap01_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Asomarse al fondo del pozo",
+          "destino": "cap01_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Subir a preguntarle al anciano por sus ratones",
+          "destino": "cap01_r03",
+          "canonica": false
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap01_r02": {
+      "texto": "[ESQUELETO DE RAMA] Coraline deja caer una piedrita y espera el sonido... que nunca llega. Se le eriza la piel y se aleja rápido.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap01_r03": {
+      "texto": "[ESQUELETO DE RAMA] El anciano le asegura que los ratones todavía no están listos para el público. Tienen que ensayar más. Coraline regresa al jardín.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap01_n03": {
+      "texto": "Empieza a llover y Coraline tiene que quedarse adentro. Se aburre tanto que su papá, sin despegar la vista de la pantalla, le sugiere un reto: contar todas las puertas y ventanas de la casa y anotar todo lo azul que encuentre.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Aceptar el reto y contar las puertas",
+          "destino": "cap01_m01",
+          "canonica": true
+        },
+        {
+          "texto": "Pedirle a su papá que juegue con ella",
+          "destino": "cap01_r04",
+          "canonica": false
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_r04": {
+      "texto": "[ESQUELETO DE RAMA] Su papá dice que tiene que terminar un trabajo. Le promete jugar otro día. Coraline suspira y empieza a contar puertas.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_m01",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_m01": {
+      "texto": "Coraline recorre el departamento con su libreta. Hay puertas por todas partes: de cuartos, de alacenas, de armarios. ¿Podrá encontrarlas todas antes de que su papá la llame a cenar?",
+      "canonico": true,
+      "imagen": "salon.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "clic",
+        "instruccion": "Haz clic en las 14 puertas antes de que se acabe el tiempo.",
+        "tiempo": 30,
+        "figura": "puerta",
+        "cantidad": 14,
+        "exito": {
+          "destino": "cap01_n04",
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        "fallo": {
+          "destino": "cap01_n04"
+        }
+      }
+    },
+    "cap01_n04": {
+      "texto": "Cuenta trece puertas que se abren y cierran sin problema. Pero hay una más: una puerta grande de madera café, tallada, en una esquina del salón. Está cerrada con llave. Su mamá guarda una llave negra y vieja en lo alto del marco de la cocina.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Pedirle a su mamá que abra la puerta",
+          "destino": "cap01_n05",
+          "canonica": true
+        },
+        {
+          "texto": "Buscar la llave por su cuenta",
+          "destino": "cap01_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_r05": {
+      "texto": "[ESQUELETO DE RAMA] Coraline acerca una silla a la cocina, pero no alcanza el marco. Su mamá la descubre y, entre risas, abre la puerta ella misma.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_n05",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_n05": {
+      "texto": "Detrás de la puerta solo hay una pared de ladrillos rojos. Su mamá le explica que, cuando dividieron la casa, taparon el paso hacia el departamento vacío de al lado. Cierra otra vez y devuelve la llave negra a su lugar.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Fijarse bien en dónde guarda la llave",
+          "destino": "cap01_n06",
+          "canonica": true
+        },
+        {
+          "texto": "Tocar los ladrillos buscando un hueco",
+          "destino": "cap01_r06",
+          "canonica": false
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_r06": {
+      "texto": "[ESQUELETO DE RAMA] Los ladrillos están fríos. Por un instante, Coraline cree sentir una corriente de aire entre ellos. Su mamá la llama a cenar.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap01_n06",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap01_n06": {
+      "texto": "Esa noche Coraline no puede dormir. Ve una sombra cruzar el pasillo y meterse al salón, justo por donde está la puerta. Cuando por fin se duerme, sueña con criaturas negras y pequeñitas, de ojos rojos, que cantan una canción que le pone los nervios de punta.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Volver a la cama e intentar dormir",
+          "destino": "cap02_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Seguir a la sombra en la oscuridad",
+          "destino": "cap01_r07",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap01_r07": {
+      "texto": "[ESQUELETO DE RAMA] Coraline camina descalza hasta el salón. La puerta está cerrada, pero algo pequeño se escurre bajo los muebles. Regresa corriendo a su cama.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "capitulo": 12,
+  "titulo": "De vuelta en casa",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap12_n01": {
+      "texto": "Coraline despierta en el sillón de su abuela. Su mamá la sacude con cariño: la estaban buscando por toda la casa. Sus padres están bien y no recuerdan nada de lo que pasó.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Abrazar a su mamá muy fuerte",
+          "destino": "cap12_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 2
+            }
+          }
+        },
+        {
+          "texto": "Contarles todo lo que pasó",
+          "destino": "cap12_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap12_r01": {
+      "texto": "[ESQUELETO DE RAMA] Sus papás se miran y se ríen: seguro fue un sueño. Coraline los abraza de todos modos.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 2
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap12_n02": {
+      "texto": "En su cuarto, Coraline vacía los bolsillos: tres canicas, la piedra con agujero, la llave negra y una bola de nieve vacía. La agita y ve caer los copos sobre nada.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Colgarse la llave negra al cuello",
+          "destino": "cap12_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Esconder la llave en un cajón",
+          "destino": "cap12_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap12_r02": {
+      "texto": "[ESQUELETO DE RAMA] Esa noche no puede dormir pensando en la llave. Se levanta, la saca del cajón y se la cuelga al cuello.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap12_n03": {
+      "texto": "Esa noche sueña con un prado y un picnic con los tres niños fantasma, por fin libres. Juegan y ríen. Al despedirse le advierten que todavía no termina: que tenga cuidado, que sea valiente y que haga trampa si es necesario.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Prometerles que tendrá cuidado",
+          "destino": "cap12_n04",
+          "canonica": true
+        },
+        {
+          "texto": "Reclamar que eso no es justo",
+          "destino": "cap12_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "prado.jpg"
+    },
+    "cap12_r03": {
+      "texto": "[ESQUELETO DE RAMA] Los niños le dicen que la otra madre nunca jugó limpio. Coraline promete tener cuidado.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_n04",
+          "canonica": true
+        }
+      ],
+      "imagen": "prado.jpg"
+    },
+    "cap12_n04": {
+      "texto": "En los días siguientes Coraline nota cosas raras: algo se arrastra debajo de los muebles y se oyen golpecitos en el piso. Sabe que algo cruzó la puerta antes de que se cerrara.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Fingir que no pasa nada mientras piensa un plan",
+          "destino": "cap12_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Avisarle a su papá",
+          "destino": "cap12_r04",
+          "canonica": false
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap12_r04": {
+      "texto": "[ESQUELETO DE RAMA] Su papá revisa debajo de los muebles y no encuentra nada. Coraline decide que tendrá que resolverlo sola.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap12_n05": {
+      "texto": "Una noche, desde la cama, oye algo que corre por el piso con demasiados dedos. Es la mano derecha de la otra madre: blanca como hueso, con uñas rojas. Viene por la llave negra.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Hacerse la dormida y no moverse",
+          "destino": "cap12_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Prender la luz y gritar",
+          "destino": "cap12_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -2
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap12_r05": {
+      "texto": "[ESQUELETO DE RAMA] La mano huye debajo de la cama y desaparece. Ahora Coraline sabe que la vigila, y que volverá.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap12_m01": {
+      "texto": "La mano trepa por la cobija buscando la llave que cuelga del cuello de Coraline. Si la atrapa, todo habrá sido en vano.",
+      "canonico": true,
+      "imagen": "noche.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "esquivar",
+        "instruccion": "Esquiva la mano durante 12 segundos. Si te atrapa 3 veces, se lleva la llave.",
+        "tiempo": 12,
+        "cantidad": 3,
+        "enemigo": "mano",
+        "persiguen": false,
+        "exito": {
+          "destino": "cap13_n01",
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        "fallo": {
+          "destino": "final_la_mano"
+        }
+      }
+    }
+  }
+}

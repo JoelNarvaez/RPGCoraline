@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+
+# Partidas guardadas
+partidas/*.json
+
+# El libro no se sube al repo
+*.pdf

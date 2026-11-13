@@ -1,0 +1,210 @@
+{
+  "capitulo": 10,
+  "titulo": "Las ratas del ático",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap10_n01": {
+      "texto": "Sube al último piso. El ático huele a especias podridas. Una voz que susurra la llama desde el fondo y le promete mundos nuevos todos los días si se queda con la otra madre.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "No hacer caso y buscar con la piedra",
+          "destino": "cap10_m01",
+          "canonica": true
+        },
+        {
+          "texto": "Escuchar lo que ofrece la voz",
+          "destino": "cap10_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap10_r01": {
+      "texto": "[ESQUELETO DE RAMA] La voz le describe mundos hechos solo para ella. Por un momento suena bonito... hasta que Coraline recuerda los botones. Saca la piedra.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap10_m01",
+          "canonica": true
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap10_m01": {
+      "texto": "Las ratas corren por todo el ático. Una de ellas lleva algo entre las garras... algo que solo la piedra puede mostrar.",
+      "canonico": true,
+      "imagen": "atico.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "buscar",
+        "instruccion": "Sigue a la rata con la piedra y haz clic en la canica que brilla.",
+        "tiempo": 25,
+        "se_mueve": true,
+        "senuelos": 5,
+        "exito": {
+          "destino": "cap10_n02"
+        },
+        "fallo": {
+          "destino": "cap10_m01",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap10_n02": {
+      "texto": "El otro anciano es en realidad un montón de ratas con forma de hombre, que se desarma al hablar. Por la piedra, Coraline ve algo que brilla como estrella junto a la puerta: la tercera canica, en las garras de la rata más grande.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Perseguir a la rata",
+          "destino": "cap10_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Tratar de engañar a la rata con comida",
+          "destino": "cap10_r02",
+          "canonica": false
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap10_r02": {
+      "texto": "[ESQUELETO DE RAMA] La rata ni voltea. Se escurre por la puerta con la canica. Coraline sale corriendo tras ella.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap10_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap10_n03": {
+      "texto": "La rata baja la escalera más rápido de lo que Coraline puede correr y desaparece. Coraline siente que les falló a todos: a los niños, a sus padres, a ella misma. Cierra los ojos deseando que se la trague la tierra. Entonces oye una tos.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Abrir los ojos",
+          "destino": "cap10_n04",
+          "canonica": true
+        },
+        {
+          "texto": "Quedarse con los ojos cerrados",
+          "destino": "cap10_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap10_r03": {
+      "texto": "[ESQUELETO DE RAMA] La tos se repite, impaciente. Alguien muy orgulloso espera que lo miren. Coraline abre los ojos.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap10_n04",
+          "canonica": true
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap10_n04": {
+      "texto": "Es el gato. Trae una rata entre los dientes y deja caer a sus pies la tercera canica. Parece muy satisfecho consigo mismo. Coraline le da las gracias de corazón.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Tomar la canica y cargar al gato",
+          "destino": "cap10_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 2
+            },
+            "agregar_objetos": [
+              "canica_del_desvan"
+            ]
+          }
+        },
+        {
+          "texto": "Tomar la canica y dejar al gato en el suelo",
+          "destino": "cap10_r04",
+          "canonica": false,
+          "efectos": {
+            "agregar_objetos": [
+              "canica_del_desvan"
+            ]
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap10_r04": {
+      "texto": "[ESQUELETO DE RAMA] El gato la sigue de todos modos, ofendido. Antes de entrar a la casa, Coraline lo carga.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap10_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 2
+            },
+            "agregar_objetos": [
+              "canica_del_desvan"
+            ]
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap10_n05": {
+      "texto": "La casa se aplasta cada vez más: ya no parece una foto, sino un garabato de carboncillo. Con el gato en brazos y las tres canicas en el bolsillo, Coraline empuja la puerta, que también es un dibujo.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Entrar a enfrentar a la otra madre",
+          "destino": "cap11_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Buscar el pasillo de regreso sin sus padres",
+          "destino": "final_padres_perdidos",
+          "canonica": false
+        }
+      ],
+      "imagen": "casa.jpg"
+    }
+  }
+}

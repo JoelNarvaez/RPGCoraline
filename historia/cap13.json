@@ -1,0 +1,214 @@
+{
+  "capitulo": 13,
+  "titulo": "El pozo",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap13_n01": {
+      "texto": "Coraline arma un plan. Le dice a su mamá que hará un picnic para sus muñecas y le pide un mantel viejo. Busca un cordel para colgar la llave y junta las tacitas de juguete.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Preparar el picnic de muñecas",
+          "destino": "cap13_m01",
+          "canonica": true
+        },
+        {
+          "texto": "Enfrentar a la mano a escobazos",
+          "destino": "final_la_mano",
+          "canonica": false
+        },
+        {
+          "texto": "Tirar la llave a la basura",
+          "destino": "cap13_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap13_r01": {
+      "texto": "[ESQUELETO DE RAMA] Coraline tira la llave, pero la mano la sacaría de ahí en un minuto. La rescata y vuelve a su plan del picnic.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap13_m01",
+          "canonica": true
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap13_m01": {
+      "texto": "Coraline llega al pozo con el mantel bajo el brazo. Tiene que tapar la boca del pozo sin que se note el agujero.",
+      "canonico": true,
+      "imagen": "pozo.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "arrastrar",
+        "instruccion": "Arrastra el mantel y déjalo justo encima del pozo.",
+        "tiempo": 15,
+        "objeto": "mantel",
+        "zona": "pozo",
+        "exito": {
+          "destino": "cap13_n02"
+        },
+        "fallo": {
+          "destino": "cap13_m01"
+        }
+      }
+    },
+    "cap13_n02": {
+      "texto": "Va al pozo del jardín y extiende el mantel justo encima de la boca, sostenido por las tacitas. Se sienta a un lado y finge una fiesta de té con su voz más alegre, como si nada pasara.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Esperar sin mirar atrás",
+          "destino": "cap13_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Revisar si el mantel aguanta",
+          "destino": "cap13_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap13_r02": {
+      "texto": "[ESQUELETO DE RAMA] Lo toca con la punta del pie y casi se le cae una tacita. Lo acomoda de nuevo, con el corazón a mil, y espera.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap13_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap13_n03": {
+      "texto": "La mano aparece entre la hierba y salta hacia la llave que Coraline sostiene sobre el mantel. El mantel cede y la mano cae al pozo, junto con las tacitas.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Soltar el cordel con la llave detrás de ella",
+          "destino": "cap13_n04",
+          "canonica": true,
+          "efectos": {
+            "quitar_objetos": [
+              "llave_negra"
+            ]
+          }
+        },
+        {
+          "texto": "Intentar quedarse con la llave",
+          "destino": "cap13_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            },
+            "quitar_objetos": [
+              "llave_negra"
+            ]
+          }
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap13_r03": {
+      "texto": "[ESQUELETO DE RAMA] La mano se aferra al cordel y casi arrastra a Coraline. Ella abre los dedos y deja que la llave caiga al pozo.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap13_n04",
+          "canonica": true,
+          "efectos": {
+            "quitar_objetos": [
+              "llave_negra"
+            ]
+          }
+        }
+      ],
+      "imagen": "pozo.jpg"
+    },
+    "cap13_n04": {
+      "texto": "Escucha un golpe muy lejano en el fondo. Coraline cubre el pozo con unas tablas viejas para que nadie caiga ahí, ni nada pueda salir. Vuelve a casa justo a tiempo para la cena.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Saludar a las vecinas al pasar",
+          "destino": "cap13_n05",
+          "canonica": true
+        },
+        {
+          "texto": "Quedarse un rato mirando el pozo",
+          "destino": "cap13_r04",
+          "canonica": false
+        }
+      ],
+      "imagen": "jardin.jpg"
+    },
+    "cap13_r04": {
+      "texto": "[ESQUELETO DE RAMA] No se oye nada más. Coraline respira hondo, por fin tranquila, y regresa a casa.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap13_n05",
+          "canonica": true
+        }
+      ],
+      "imagen": "jardin.jpg"
+    },
+    "cap13_n05": {
+      "texto": "Al día siguiente empieza la escuela. Antes de salir, el anciano del ático la detiene en la escalera: los ratones dicen que el circo ya está listo, y que ella es su invitada de honor.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Prometer que irá a verlo esa noche",
+          "destino": "final_canonico",
+          "canonica": true
+        },
+        {
+          "texto": "Ir directo a la escuela",
+          "destino": "cap13_r05",
+          "canonica": false
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap13_r05": {
+      "texto": "[ESQUELETO DE RAMA] Coraline se va a la escuela, pero en la tarde no se le olvida la invitación.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "final_canonico",
+          "canonica": true
+        }
+      ],
+      "imagen": "casa.jpg"
+    }
+  }
+}

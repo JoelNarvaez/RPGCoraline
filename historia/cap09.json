@@ -1,0 +1,229 @@
+{
+  "capitulo": 9,
+  "titulo": "El sótano",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap09_n01": {
+      "texto": "Afuera, la casa parece una imitación torcida de sí misma. La otra madre la espera en el pasto con los brazos cruzados y le ofrece, con voz melosa, una pequeña pista para su búsqueda.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Rechazar la ayuda: puede sola",
+          "destino": "cap09_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Escuchar la pista",
+          "destino": "cap09_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap09_r01": {
+      "texto": "[ESQUELETO DE RAMA] La pista la manda al jardín, donde no hay nada. Coraline pierde tiempo y se da cuenta del engaño. Regresa a la casa.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap09_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap09_n02": {
+      "texto": "Entra al departamento de los otros padres buscando a los suyos. Silba para darse valor. Cocina vacía, baño vacío... Al fondo del pasillo hay una puerta que baja al sótano.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Bajar al sótano",
+          "destino": "cap09_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Revisar primero el otro cuarto",
+          "destino": "cap09_r02",
+          "canonica": false
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap09_r02": {
+      "texto": "[ESQUELETO DE RAMA] El otro cuarto está vacío; hasta los juguetes se fueron. Solo queda la puerta del sótano.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap09_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "cocina.jpg"
+    },
+    "cap09_n03": {
+      "texto": "El sótano huele a vino agrio y pan podrido. Debajo de un montón de cortinas viejas asoma un pie. Es el otro padre, o lo que queda de él: una masa blanca y blanda con dos botones.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Acercarse y hablarle con calma",
+          "destino": "cap09_n04",
+          "canonica": true
+        },
+        {
+          "texto": "Subir corriendo la escalera",
+          "destino": "cap09_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "sotano.jpg"
+    },
+    "cap09_r03": {
+      "texto": "[ESQUELETO DE RAMA] Coraline se tropieza en el tercer escalón. La cosa la oye y se levanta. No hay más remedio que quedarse y hablarle.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap09_n04",
+          "canonica": true
+        }
+      ],
+      "imagen": "sotano.jpg"
+    },
+    "cap09_n04": {
+      "texto": "El otro padre le pide perdón: la otra madre lo castigó por platicar con ella, y ahora lo obliga a hacerle daño. Se le cae uno de los botones. Coraline le acaricia la cabeza: él solo es algo que ella hizo y luego tiró.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Subir despacio mientras él lucha contra la orden",
+          "destino": "cap09_m01",
+          "canonica": true
+        },
+        {
+          "texto": "Preguntarle dónde están sus padres",
+          "destino": "cap09_r04",
+          "canonica": false
+        }
+      ],
+      "imagen": "sotano.jpg"
+    },
+    "cap09_r04": {
+      "texto": "[ESQUELETO DE RAMA] El otro padre balbucea que no lo sabe, que ella nunca le cuenta nada. Coraline empieza a subir despacio.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap09_m01",
+          "canonica": true
+        }
+      ],
+      "imagen": "sotano.jpg"
+    },
+    "cap09_m01": {
+      "texto": "El otro padre ya no puede resistir la orden. Se lanza a ciegas por todo el sótano, buscando a Coraline con las manos.",
+      "canonico": true,
+      "imagen": "sotano.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "esquivar",
+        "instruccion": "Esquiva al otro padre durante 12 segundos. Te persigue, así que no te quedes quieta.",
+        "tiempo": 12,
+        "cantidad": 2,
+        "enemigo": "otro_padre",
+        "persiguen": true,
+        "exito": {
+          "destino": "cap09_n05",
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        "fallo": {
+          "destino": "cap09_m01",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap09_n05": {
+      "texto": "La criatura se lanza hacia ella a ciegas. Coraline se queda muy quieta, después sube a toda velocidad y cierra la puerta. Afuera, el mundo está gris y vacío. Se dice a sí misma que es valiente y se esfuerza por creerlo.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Ir al ático del anciano",
+          "destino": "cap10_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Esconderse un rato en el jardín",
+          "destino": "cap09_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "niebla.jpg"
+    },
+    "cap09_r05": {
+      "texto": "[ESQUELETO DE RAMA] Coraline se sienta bajo un árbol que parece de papel. El tiempo corre en su contra. Se levanta y va al ático.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap10_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "niebla.jpg"
+    }
+  }
+}

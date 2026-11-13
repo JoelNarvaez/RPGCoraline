@@ -1,0 +1,35 @@
+{
+  "capitulo": 0,
+  "titulo": "Finales",
+  "responsable": "Persona B",
+  "nodos": {
+    "final_canonico": {
+      "texto": "Esa noche, con la ventana abierta, Coraline escucha a lo lejos la música diminuta del circo de ratones. Mañana sigue la escuela y ya no le da miedo. Ahora sabe que ser valiente no es no tener miedo: es tenerlo y hacer lo correcto de todos modos. Se duerme sonriendo.",
+      "canonico": true,
+      "final": "canonico",
+      "imagen": "noche.jpg",
+      "opciones": []
+    },
+    "final_ojos_de_boton": {
+      "texto": "Coraline deja que la aguja haga su trabajo. Ya no le duele nada y ya no extraña nada. La otra madre la abraza y le dice que es su niña perfecta. Del otro lado del espejo, sus padres de verdad siguen esperando a alguien que nunca va a llegar.",
+      "canonico": false,
+      "final": "malo",
+      "imagen": "espejo.jpg",
+      "opciones": []
+    },
+    "final_padres_perdidos": {
+      "texto": "Coraline vuelve a su casa sola. Nadie la regaña y nadie la abraza. Pasan los días y aprende a cocinar, a lavar su ropa y a no hacer preguntas. A veces, en el espejo del pasillo, cree ver dos figuras pálidas que golpean el vidrio sin hacer ruido.",
+      "canonico": false,
+      "final": "malo",
+      "imagen": "salon.jpg",
+      "opciones": []
+    },
+    "final_la_mano": {
+      "texto": "La mano es más rápida. Se escurre entre sus dedos, se lleva la llave negra y desaparece debajo del sillón. Esa misma noche, mientras todos duermen, la puerta del salón vuelve a abrirse sola.",
+      "canonico": false,
+      "final": "malo",
+      "imagen": "noche.jpg",
+      "opciones": []
+    }
+  }
+}

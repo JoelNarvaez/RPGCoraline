@@ -1,0 +1,216 @@
+{
+  "capitulo": 6,
+  "titulo": "Detrás del espejo",
+  "responsable": "Persona A",
+  "nodos": {
+    "cap06_n01": {
+      "texto": "Despierta en el otro cuarto con el sol en la cara y, por un momento, no sabe quién es. En el armario hay ropa maravillosa: pantalones de terciopelo negro, un suéter gris lleno de estrellitas y unas botas naranjas brillantes.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Ponerse la ropa nueva y salir",
+          "destino": "cap06_n02",
+          "canonica": true
+        },
+        {
+          "texto": "Ponerse su bata de siempre",
+          "destino": "cap06_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 1
+            }
+          }
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap06_r01": {
+      "texto": "[ESQUELETO DE RAMA] Con su bata vieja, Coraline se siente más ella misma. Se guarda la piedra en el bolsillo y sale.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap06_n02",
+          "canonica": true
+        }
+      ],
+      "imagen": "cuarto.jpg"
+    },
+    "cap06_n02": {
+      "texto": "Detrás de la casa el mundo se acaba: más allá solo hay una blancura sin forma, sin olor y sin sonido. El gato le explica que la otra madre solo hizo lo que alcanza a ver desde la casa.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Caminar hacia la blancura junto al gato",
+          "destino": "cap06_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1,
+              "confianza_gato": 1
+            }
+          }
+        },
+        {
+          "texto": "Quedarse en el jardín",
+          "destino": "cap06_r02",
+          "canonica": false
+        }
+      ],
+      "imagen": "niebla.jpg"
+    },
+    "cap06_r02": {
+      "texto": "[ESQUELETO DE RAMA] Coraline no se atreve. El gato se encoge de hombros, a su manera, y camina solo hacia la nada. Al rato vuelve por el otro lado de la casa.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap06_n03",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1,
+              "confianza_gato": 1
+            }
+          }
+        }
+      ],
+      "imagen": "niebla.jpg"
+    },
+    "cap06_n03": {
+      "texto": "Caminan en línea recta... y vuelven a la casa por el otro lado. Adentro, el otro padre está sentado en su estudio sin hacer nada. Le susurra que no debe platicar con ella cuando la otra madre no está, y que ella está tapando todas las entradas.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Contarle al gato lo que dijo el otro padre",
+          "destino": "cap06_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        },
+        {
+          "texto": "Preguntarle al otro padre dónde están sus padres",
+          "destino": "cap06_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap06_r03": {
+      "texto": "[ESQUELETO DE RAMA] El otro padre abre la boca, pero de ella no sale nada. Se tapa la cara con las manos. Coraline va a buscar al gato.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap06_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        }
+      ],
+      "imagen": "casa.jpg"
+    },
+    "cap06_n04": {
+      "texto": "La otra madre la encuentra frente al espejo del pasillo. Le propone jugar a lo que ella quiera: avión, rompecabezas, lo que sea. Coraline le contesta que quiere ir a casa con sus verdaderos padres.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Decirle que no la quiere y que no se quedará",
+          "destino": "cap06_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Fingir que juega con ella para ganar tiempo",
+          "destino": "cap06_r04",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap06_r04": {
+      "texto": "[ESQUELETO DE RAMA] Coraline juega sin ganas. La otra madre se da cuenta del engaño y sus botones se oscurecen todavía más.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap06_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap06_n05": {
+      "texto": "La otra madre se enfurece. Saca un escarabajo de una bolsita de papel y se lo come. Luego toma a Coraline del brazo y la empuja a un hueco oscuro detrás del espejo, hasta que aprenda a ser una hija cariñosa.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Aguantar en silencio y no llorar",
+          "destino": "cap07_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Pedir perdón y prometer portarse bien",
+          "destino": "cap06_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -2
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap06_r05": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre no la escucha y cierra el espejo de todos modos. La disculpa solo le dejó a Coraline un sabor amargo.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap07_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    }
+  }
+}

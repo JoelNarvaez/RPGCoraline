@@ -1,0 +1,248 @@
+{
+  "capitulo": 2,
+  "titulo": "La piedra con agujero",
+  "responsable": "Persona A",
+  "nodos": {
+    "cap02_n01": {
+      "texto": "Amanece con una niebla espesa. Coraline sale bien abrigada y se encuentra con la señorita Spink paseando a sus perros. La vecina le platica, como siempre, de sus años de gloria en el teatro... y la vuelve a llamar por un nombre equivocado.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Corregirla con paciencia y seguir platicando",
+          "destino": "cap02_n02",
+          "canonica": true
+        },
+        {
+          "texto": "Ignorarla y seguir de largo",
+          "destino": "cap02_r01",
+          "canonica": false
+        }
+      ],
+      "imagen": "jardin.jpg"
+    },
+    "cap02_r01": {
+      "texto": "[ESQUELETO DE RAMA] Coraline camina sola entre la niebla hasta que el frío le cala los huesos. Al final regresa a la casa sin haber visto nada interesante.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_n02",
+          "canonica": true
+        }
+      ],
+      "imagen": "jardin.jpg"
+    },
+    "cap02_n02": {
+      "texto": "Coraline sube al ático a saludar al anciano del bigote. Él le dice muy serio que los ratones tienen un mensaje para ella: que no cruce la puerta. A Coraline le parece una tontería, pero el anciano lo repite dos veces.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Darle las gracias y bajar",
+          "destino": "cap02_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Pedirle ver el circo de ratones",
+          "destino": "cap02_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap02_r02": {
+      "texto": "[ESQUELETO DE RAMA] El anciano niega con la cabeza: el circo aún no está listo, y los ratones se ponen nerviosos con extraños. Coraline baja la escalera pensando en el mensaje.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "atico.jpg"
+    },
+    "cap02_n03": {
+      "texto": "En la tarde toca en el departamento de las actrices. La sala está llena de perros, fotos antiguas y olor a dulces viejos. La señorita Spink y la señorita Forcible la invitan a tomar té con galletas duras como piedra.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Aceptar el té y quedarse con ellas",
+          "destino": "cap02_n04",
+          "canonica": true
+        },
+        {
+          "texto": "Decir que su mamá la espera",
+          "destino": "cap02_r03",
+          "canonica": false
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_r03": {
+      "texto": "[ESQUELETO DE RAMA] Coraline se despide en la puerta. Mientras sube la escalera, alcanza a oír a las vecinas murmurar algo sobre un peligro. Vuelve a bajar y acepta el té.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_n04",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_n04": {
+      "texto": "Al terminar el té, la señorita Forcible le lee las hojas que quedaron en la taza. Se pone pálida: dice que ve un gran peligro rondando a Coraline. La señorita Spink no está de acuerdo con lo que ve, y las dos se ponen a discutir.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Preguntar qué clase de peligro",
+          "destino": "cap02_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Reírse y decir que no cree en eso",
+          "destino": "cap02_r04",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_r04": {
+      "texto": "[ESQUELETO DE RAMA] Las vecinas se quedan calladas y la miran con lástima. A Coraline se le borra la sonrisa sin saber por qué.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_m01": {
+      "texto": "La señorita Forcible le pide ayuda: hay que señalar cada hoja de té antes de que el té se enfríe y las hojas pierdan su forma.",
+      "canonico": true,
+      "imagen": "salon.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "clic",
+        "instruccion": "Haz clic en las 9 hojas de té de la taza.",
+        "tiempo": 15,
+        "figura": "hoja",
+        "cantidad": 9,
+        "exito": {
+          "destino": "cap02_n05",
+          "efectos": {
+            "estadisticas": {
+              "cordura": 1
+            }
+          }
+        },
+        "fallo": {
+          "destino": "cap02_n05",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap02_n05": {
+      "texto": "La señorita Spink busca entre sus cajones y le regala una piedra con un agujero en medio. Le dice que a veces sirve contra las cosas malas, y que la lleve siempre con ella.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Guardar la piedra en el bolsillo",
+          "destino": "cap02_n06",
+          "canonica": true,
+          "efectos": {
+            "agregar_objetos": [
+              "piedra_con_agujero"
+            ]
+          }
+        },
+        {
+          "texto": "Mirar a través del agujero en ese momento",
+          "destino": "cap02_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            },
+            "agregar_objetos": [
+              "piedra_con_agujero"
+            ]
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_r05": {
+      "texto": "[ESQUELETO DE RAMA] Por el agujero la sala se ve igual... aunque por un segundo los perros parecen muy viejos y transparentes. Coraline guarda la piedra en el bolsillo.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap02_n06",
+          "canonica": true,
+          "efectos": {
+            "agregar_objetos": [
+              "piedra_con_agujero"
+            ]
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap02_n06": {
+      "texto": "Regresa a casa entre la niebla. Siente que el mundo de afuera está lleno de cosas escondidas. Aprieta la piedra en el puño: la idea del peligro le da miedo, pero también un poco de emoción.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Entrar a casa sin decirle nada a nadie",
+          "destino": "cap03_n01",
+          "canonica": true
+        },
+        {
+          "texto": "Contarle a su mamá lo del peligro",
+          "destino": "cap02_r06",
+          "canonica": false
+        }
+      ],
+      "imagen": "niebla.jpg"
+    },
+    "cap02_r06": {
+      "texto": "[ESQUELETO DE RAMA] Su mamá le dice que las vecinas exageran todo porque eran actrices. Coraline se va a su cuarto sin insistir.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap03_n01",
+          "canonica": true
+        }
+      ],
+      "imagen": "niebla.jpg"
+    }
+  }
+}

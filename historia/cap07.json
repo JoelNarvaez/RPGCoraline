@@ -1,0 +1,202 @@
+{
+  "capitulo": 7,
+  "titulo": "Los niños fantasma",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap07_n01": {
+      "texto": "Está encerrada en un espacio diminuto: apenas puede sentarse. Una de las paredes es de vidrio frío. No hay puerta ni manija. En la oscuridad, algo helado le roza la mano.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Preguntar quién está ahí",
+          "destino": "cap07_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Hacerse bolita y no moverse",
+          "destino": "cap07_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_r01": {
+      "texto": "[ESQUELETO DE RAMA] Coraline se queda quieta mucho rato. El roce se repite, suave, casi cariñoso. Al final pregunta quién está ahí.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap07_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_n02": {
+      "texto": "Son tres niños fantasma, pálidos como nubes. Llevan muchísimo tiempo ahí. La otra madre los atrapó, a cada uno en su época: les dio todo lo que pedían y luego les quitó el alma y los dejó olvidados detrás del espejo.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Pedirles que le cuenten su historia",
+          "destino": "cap07_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Decirles que la dejen en paz",
+          "destino": "cap07_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_r02": {
+      "texto": "[ESQUELETO DE RAMA] Los fantasmas se callan. El silencio es peor que sus voces. Coraline se arrepiente y les pide que le cuenten.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap07_n03",
+          "canonica": true
+        }
+      ]
+    },
+    "cap07_n03": {
+      "texto": "Uno usaba capa y peluca blanca; otra, una cofia antigua; el niño más pequeño ya ni recuerda su nombre. La otra madre les guardó el alma en algún lugar. Si alguien la encontrara, podrían irse por fin a donde van los demás.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Prometerles que buscará sus almas",
+          "destino": "cap07_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Preguntar cómo puede escapar ella sola",
+          "destino": "cap07_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_r03": {
+      "texto": "[ESQUELETO DE RAMA] Los fantasmas le dicen que nadie ha escapado nunca. Coraline siente vergüenza de haber pensado solo en ella. Les promete buscar sus almas.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap07_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_n04": {
+      "texto": "Los fantasmas le advierten que la otra madre siempre gana, y que ella terminará igual que ellos. A Coraline se le encoge el estómago, pero se acuerda de su papá y las avispas.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Respirar hondo y no rendirse",
+          "destino": "cap07_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Llorar un rato",
+          "destino": "cap07_r04",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": 1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_r04": {
+      "texto": "[ESQUELETO DE RAMA] Coraline llora en silencio. Después se siente un poco más ligera, y decide que no se va a rendir.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap07_n05",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_n05": {
+      "texto": "Coraline se acomoda para dormir sobre su suéter doblado. Medio dormida, siente un beso ligero en la mejilla, y una vocecita muy lejana le dice al oído que mire a través de la piedra.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Apretar la piedra y dormirse",
+          "destino": "cap08_n01",
+          "canonica": true
+        },
+        {
+          "texto": "Mirar por la piedra en la oscuridad",
+          "destino": "cap07_r05",
+          "canonica": false,
+          "requiere": {
+            "objetos": [
+              "piedra_con_agujero"
+            ]
+          },
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ]
+    },
+    "cap07_r05": {
+      "texto": "[ESQUELETO DE RAMA] No ve nada todavía. Pero la piedra está tibia, como si estuviera viva. Coraline se duerme con ella en la mano.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap08_n01",
+          "canonica": true
+        }
+      ]
+    }
+  }
+}

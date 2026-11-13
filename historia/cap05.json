@@ -1,0 +1,226 @@
+{
+  "capitulo": 5,
+  "titulo": "Una familia de una sola persona",
+  "responsable": "Persona A",
+  "nodos": {
+    "cap05_n01": {
+      "texto": "Su mamá no ha vuelto. Coraline se prepara pan tostado, cena pizza congelada y espera. Su papá tampoco llega. Se va a dormir sola en la casa vacía, con todas las luces prendidas.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Esperar hasta el día siguiente",
+          "destino": "cap05_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        },
+        {
+          "texto": "Salir de noche a buscarlos",
+          "destino": "cap05_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap05_r01": {
+      "texto": "[ESQUELETO DE RAMA] Afuera solo hay oscuridad y el ruido del viento entre los árboles. Coraline regresa, cierra la puerta y espera.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap05_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap05_n02": {
+      "texto": "En la mañana sigue sola. Baja con las vecinas y les cuenta que sus padres desaparecieron. Ellas apenas la escuchan: le hablan de unos recortes de periódico de su época de teatro que acaban de encontrar.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Volver a casa y buscar ayuda por su cuenta",
+          "destino": "cap05_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Pedirles que la dejen quedarse con ellas",
+          "destino": "cap05_r02",
+          "canonica": false
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap05_r02": {
+      "texto": "[ESQUELETO DE RAMA] Las vecinas le sirven té y le aseguran que sus papás seguro se fueron de viaje. Coraline se da cuenta de que no la van a ayudar y sube.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap05_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap05_n03": {
+      "texto": "El gato negro aparece en el jardín y la mira. Coraline le pregunta si sabe dónde están sus padres. El gato parpadea despacio, entra a la casa y se detiene frente al espejo del pasillo.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Mirar el espejo",
+          "destino": "cap05_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        },
+        {
+          "texto": "Correr al gato de la casa",
+          "destino": "cap05_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": -1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap05_r03": {
+      "texto": "[ESQUELETO DE RAMA] El gato sale, pero vuelve a entrar por la ventana y se sienta frente al espejo, muy digno. Coraline se rinde y mira.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap05_n04",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap05_n04": {
+      "texto": "En el espejo aparecen su mamá y su papá, pálidos, como atrapados del otro lado. Su papá escribe con el dedo en el vidrio una sola palabra: AYÚDANOS. Luego el espejo vuelve a ser un espejo normal.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Llamar a la policía",
+          "destino": "cap05_n05",
+          "canonica": true
+        },
+        {
+          "texto": "Golpear el espejo con los puños",
+          "destino": "cap05_r04",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap05_r04": {
+      "texto": "[ESQUELETO DE RAMA] El vidrio ni siquiera tiembla. Coraline se lastima las manos y se sienta en el suelo a pensar. Luego va al teléfono.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap05_n05",
+          "canonica": true
+        }
+      ],
+      "imagen": "espejo.jpg"
+    },
+    "cap05_n05": {
+      "texto": "El policía no le cree y le dice que espere a que vuelvan. Esa noche, Coraline le cuenta al gato la vez que su papá se quedó quieto mientras lo picaban unas avispas, para que ella pudiera escapar. Ser valiente es tener miedo y hacer lo correcto de todos modos.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Decidir ir por sus padres",
+          "destino": "cap05_n06",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 2
+            }
+          }
+        },
+        {
+          "texto": "Rendirse y esperar a que alguien más los rescate",
+          "destino": "final_padres_perdidos",
+          "canonica": false
+        }
+      ],
+      "imagen": "noche.jpg"
+    },
+    "cap05_n06": {
+      "texto": "Abre la puerta con la llave negra y cruza. La otra madre la recibe con los brazos abiertos. Coraline la acusa de haberse llevado a sus padres; ella lo niega con voz dulce. El gato, desde un rincón, le susurra: desafíala, le encantan los juegos.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Quedarse a dormir para pensar un plan",
+          "destino": "cap06_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        },
+        {
+          "texto": "Exigirle a gritos que le devuelva a sus padres",
+          "destino": "cap05_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1,
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap05_r05": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre se ríe bajito y la manda a dormir, como si fuera un berrinche. Coraline se acuesta furiosa.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap06_n01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "capitulo": 11,
+  "titulo": "El último truco",
+  "responsable": "Persona B",
+  "nodos": {
+    "cap11_n01": {
+      "texto": "Adentro, la otra madre la espera molesta y le reclama que trajo bichos. Coraline le contesta que trajo a un amigo. Ya tiene las tres almas: solo le faltan sus padres.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Decir que ya sabe dónde están sus padres",
+          "destino": "cap11_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Pedir más tiempo",
+          "destino": "cap11_r01",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap11_r01": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre le dice que el tiempo se acabó. Coraline tiene que adivinar ahora.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap11_n02",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap11_n02": {
+      "texto": "En este mundo, la puerta del salón da a una pared de ladrillos. Sobre la chimenea hay una bola de nieve con dos figuritas adentro. Coraline hace todo lo posible por no mirarla.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Asegurar que sus padres están detrás de la puerta",
+          "destino": "cap11_n03",
+          "canonica": true
+        },
+        {
+          "texto": "Señalar la bola de nieve",
+          "destino": "cap11_r02",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap11_r02": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre se pone delante de la chimenea antes de que Coraline pueda moverse. Coraline cambia de táctica: dice que están detrás de la puerta.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap11_n03",
+          "canonica": true
+        }
+      ],
+      "imagen": "salon.jpg"
+    },
+    "cap11_n03": {
+      "texto": "Sonriendo, la otra madre saca la llave y abre la puerta para demostrarle que se equivoca. Detrás solo está el pasillo oscuro. Coraline tiene una sola oportunidad.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Lanzarle el gato a la cara",
+          "destino": "cap11_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        },
+        {
+          "texto": "Correr hacia la puerta sin más",
+          "destino": "cap11_r03",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap11_r03": {
+      "texto": "[ESQUELETO DE RAMA] La otra madre la alcanza a tomar del brazo. El gato salta solo, sin que nadie se lo pida, y Coraline queda libre.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap11_m01",
+          "canonica": true,
+          "efectos": {
+            "estadisticas": {
+              "valentia": 1
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap11_m01": {
+      "texto": "La otra madre va de un lado a otro sin quitarle los botones de encima. Coraline sostiene al gato con las dos manos.",
+      "canonico": true,
+      "imagen": "salon.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "arrastrar",
+        "instruccion": "Arrastra al gato y suéltalo justo sobre la otra madre. ¡Ella no se queda quieta!",
+        "tiempo": 12,
+        "objeto": "gato",
+        "zona": "otra_madre",
+        "zona_se_mueve": true,
+        "exito": {
+          "destino": "cap11_n04",
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            }
+          }
+        },
+        "fallo": {
+          "destino": "cap11_m01",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap11_n04": {
+      "texto": "El gato le araña la cara a la otra madre. Coraline toma la bola de nieve de la chimenea y la llave de la cerradura, y corre por el pasillo frío. Detrás de ella, la otra madre grita.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Correr sin soltar nada",
+          "destino": "cap11_m02",
+          "canonica": true,
+          "efectos": {
+            "agregar_objetos": [
+              "bola_de_cristal"
+            ]
+          }
+        },
+        {
+          "texto": "Detenerse a ayudar al gato",
+          "destino": "cap11_r04",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "confianza_gato": 1
+            },
+            "agregar_objetos": [
+              "bola_de_cristal"
+            ]
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap11_r04": {
+      "texto": "[ESQUELETO DE RAMA] El gato no necesita ayuda: pasa como rayo junto a ella. Coraline vuelve a correr con la bola de nieve apretada.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap11_m02",
+          "canonica": true,
+          "efectos": {
+            "agregar_objetos": [
+              "bola_de_cristal"
+            ]
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap11_m02": {
+      "texto": "Coraline llega a la puerta y empuja con todas sus fuerzas. Del otro lado, la otra madre empuja también.",
+      "canonico": true,
+      "imagen": "pasillo.jpg",
+      "opciones": [],
+      "minijuego": {
+        "tipo": "presionar",
+        "instruccion": "Presiona ESPACIO (o da clic) muy rápido para cerrar la puerta antes de que la otra madre la abra.",
+        "tiempo": 15,
+        "empuje": 22,
+        "exito": {
+          "destino": "cap11_n05"
+        },
+        "fallo": {
+          "destino": "cap11_m02",
+          "efectos": {
+            "estadisticas": {
+              "cordura": -1
+            }
+          }
+        }
+      }
+    },
+    "cap11_n05": {
+      "texto": "Llega a la puerta, pero no tiene fuerzas para cerrarla: la otra madre empuja del otro lado. Coraline les pide ayuda a los fantasmas, y unas manos heladas la atraviesan y le prestan su fuerza. La puerta se cierra de golpe.",
+      "canonico": true,
+      "opciones": [
+        {
+          "texto": "Echar llave y guardarla",
+          "destino": "cap12_n01",
+          "canonica": true
+        },
+        {
+          "texto": "Abrir un poco para ver si la sigue",
+          "destino": "cap11_r05",
+          "canonica": false,
+          "efectos": {
+            "estadisticas": {
+              "cordura": -2
+            }
+          }
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    },
+    "cap11_r05": {
+      "texto": "[ESQUELETO DE RAMA] Algo pálido intenta colarse por la rendija. Coraline cierra de golpe y le echa llave.",
+      "canonico": false,
+      "opciones": [
+        {
+          "texto": "Continuar",
+          "destino": "cap12_n01",
+          "canonica": true
+        }
+      ],
+      "imagen": "pasillo.jpg"
+    }
+  }
+}
