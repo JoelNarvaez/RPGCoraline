@@ -23,7 +23,7 @@
           "canonica": false
         }
       ],
-      "imagen": "casa.jpg"
+      "imagen": "casarosa.webp"
     },
     "cap01_r01": {
       "texto": "[ESQUELETO DE RAMA] Coraline cambia de canal una y otra vez. Nada le interesa. Al final se pone las botas y sale a explorar de todos modos.",
@@ -45,6 +45,8 @@
     "cap01_n02": {
       "texto": "En el jardín encuentra una cancha de tenis abandonada, rosales secos y, escondido entre la hierba alta, un pozo muy antiguo. Las vecinas le advirtieron que nadie sabe qué tan hondo es. Coraline lo rodea con cuidado.",
       "canonico": true,
+      "mostrar_personaje": false,
+      "diseno": "exploracion", 
       "opciones": [
         {
           "texto": "Marcar el borde del pozo con palos y alejarse",
@@ -67,7 +69,7 @@
           "canonica": false
         }
       ],
-      "imagen": "pozo.jpg"
+      "imagen": "jardin_pozo.jpg"
     },
     "cap01_r02": {
       "texto": "[ESQUELETO DE RAMA] Coraline deja caer una piedrita y espera el sonido... que nunca llega. Se le eriza la piel y se aleja rápido.",
@@ -79,7 +81,7 @@
           "canonica": true
         }
       ],
-      "imagen": "pozo.jpg"
+      "imagen": "jardin_pozo.jpg"
     },
     "cap01_r03": {
       "texto": "[ESQUELETO DE RAMA] El anciano le asegura que los ratones todavía no están listos para el público. Tienen que ensayar más. Coraline regresa al jardín.",
@@ -91,7 +93,7 @@
           "canonica": true
         }
       ],
-      "imagen": "pozo.jpg"
+      "imagen": "jardin_pozo.jpg"
     },
     "cap01_n03": {
       "texto": "Empieza a llover y Coraline tiene que quedarse adentro. Se aburre tanto que su papá, sin despegar la vista de la pantalla, le sugiere un reto: contar todas las puertas y ventanas de la casa y anotar todo lo azul que encuentre.",
