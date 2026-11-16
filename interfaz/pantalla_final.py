@@ -12,7 +12,7 @@ import config
 from juego import motor
 from interfaz import dibujo
 from interfaz import animaciones
-from interfaz import pantalla_juego
+from interfaz import piezas
 
 MARGEN: int = 120
 Y_TEXTO: int = 220
@@ -58,7 +58,7 @@ def dibujar(ventana: pygame.Surface, contexto: dict) -> None:
     tipo: str = nodo["final"]
     centro: int = config.ANCHO // 2
 
-    pantalla_juego.dibujar_fondo(ventana, nodo)
+    piezas.fondo(ventana, nodo)
     dibujo.dibujar_texto_centrado(ventana, TITULOS.get(tipo, "FINAL"), fuentes["titulo"],
                                   COLORES.get(tipo, config.COLOR_TEXTO), centro, 100)
 

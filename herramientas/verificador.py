@@ -12,6 +12,8 @@ Revisa:
 - Que ningún nombre de nodo se repita entre archivos.
 - Que ningún nodo pase de MAXIMO_OPCIONES ni de MAXIMO_LETRAS_TEXTO
   (si no, no cabe en la pantalla).
+- Que todo "diseno" exista y que el texto quepa en los renglones de ese
+  diseño (se mide con la fuente y el ancho reales).
 - Que todo nodo que no sea final tenga al menos una opción sin "requiere".
 - Que toda "imagen" exista en recursos/imagenes/.
 - Que los minijuegos sean de un tipo que existe y que sus destinos existan.
@@ -21,13 +23,19 @@ Responsable: Persona B
 
 import os
 
+import pygame
+
 import config
+import main as juego_principal
 from juego import motor
 from juego import partida
+from interfaz import disenos
+from interfaz import fondos
+from interfaz import pantalla_juego
 
 TOTAL_DECISIONES: int = 300
 DECISIONES_CANONICAS: int = 70
-TIPOS_MINIJUEGO: list = ["clic", "arrastrar", "buscar", "esquivar", "presionar"]
+TIPOS_MINIJUEGO: list = ["clic", "arrastrar", "buscar", "esquivar", "presionar", "recorrido", "taza_te", "llave_puerta"]
 
 
 def destinos_de(nodo: dict) -> list:
@@ -87,10 +95,31 @@ def revisar_nodos(nodos: dict, errores: list) -> None:
         if motor.es_minijuego(nodo) and nodo["minijuego"]["tipo"] not in TIPOS_MINIJUEGO:
             errores.append(nombre + ": el minijuego \"" + nodo["minijuego"]["tipo"] + "\" no existe")
 
+        if "fondo" in nodo and nodo["fondo"] not in fondos.FONDOS:
+            errores.append(nombre + ": no existe el fondo dibujado \"" + nodo["fondo"] + "\"")
+
         if "imagen" in nodo:
             ruta_imagen: str = os.path.join(config.RUTA_IMAGENES, nodo["imagen"])
             if not os.path.exists(ruta_imagen):
                 errores.append(nombre + ": no existe la imagen " + nodo["imagen"])
+
+
+def revisar_pantalla(nodos: dict, errores: list) -> None:
+    """Revisa que cada nodo use un diseño que existe y que su texto quepa en él."""
+    pygame.font.init()
+    fuentes: dict = juego_principal.crear_contexto()["fuentes"]
+    for nombre in nodos:
+        nodo: dict = nodos[nombre]
+        if motor.es_final(nodo):
+            continue   # los finales tienen su propia pantalla
+        if nodo.get("diseno", disenos.POR_DEFECTO) not in disenos.DISENOS:
+            errores.append(nombre + ": el diseño \"" + nodo["diseno"] + "\" no existe")
+            continue
+        renglones: int = len(pantalla_juego.lineas_del_nodo(nodo, fuentes))
+        maximo: int = disenos.del_nodo(nodo).maximo_lineas(fuentes)
+        if renglones > maximo:
+            errores.append(nombre + ": el texto ocupa " + str(renglones) + " renglones y en su diseño caben "
+                           + str(maximo) + " (acórtalo o pártelo en dos nodos)")
 
 
 def revisar_alcanzables(nodos: dict, errores: list) -> None:
@@ -132,6 +161,7 @@ def main() -> None:
 
     revisar_repetidos(errores)
     revisar_nodos(nodos, errores)
+    revisar_pantalla(nodos, errores)
     revisar_alcanzables(nodos, errores)
     conteo: list = contar_decisiones(nodos)
 

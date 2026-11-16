@@ -77,6 +77,7 @@ def crear_contexto() -> dict:
 
     contexto: dict = {
         "nodos": motor.cargar_historia(config.RUTA_HISTORIA),
+        "capitulos": motor.cargar_capitulos(config.RUTA_HISTORIA),
         "estado": None,
         "pantalla": "intro",
         "salir": False,
@@ -109,6 +110,8 @@ def crear_contexto() -> dict:
         "lineas": [],
         "total_letras": 0,
         "opciones": [],
+        "rect_opciones": [],
+        "pregunta": "",
         "minijuego": None,
 
         # DATOS DE LAS ANIMACIONES

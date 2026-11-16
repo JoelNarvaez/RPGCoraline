@@ -16,11 +16,15 @@ from juego import motor
 from interfaz import dibujo
 from interfaz import animaciones
 from interfaz import pantalla_juego
+from interfaz import piezas
 from interfaz.minijuegos import clic
 from interfaz.minijuegos import arrastrar
 from interfaz.minijuegos import buscar
 from interfaz.minijuegos import esquivar
 from interfaz.minijuegos import presionar
+from interfaz.minijuegos import recorrido
+from interfaz.minijuegos import taza_te
+from interfaz.minijuegos import llave_puerta
 
 # Cada tipo de minijuego y el módulo que lo maneja
 MODULOS: dict = {
@@ -29,6 +33,9 @@ MODULOS: dict = {
     "buscar": buscar,
     "esquivar": esquivar,
     "presionar": presionar,
+    "recorrido": recorrido,
+    "taza_te": taza_te,
+    "llave_puerta": llave_puerta,
 }
 TITULOS: dict = {
     "clic": "Explora",
@@ -36,6 +43,9 @@ TITULOS: dict = {
     "buscar": "Busca con la piedra",
     "esquivar": "¡Escapa!",
     "presionar": "¡Rápido!",
+    "recorrido": "Recorre la casa",
+    "taza_te": "Lee las hojas",
+    "llave_puerta": "Abre la puerta",
 }
 
 
@@ -108,7 +118,7 @@ def dibujar(ventana: pygame.Surface, contexto: dict) -> None:
     centro: int = config.ANCHO // 2
 
     nodo: dict = motor.nodo_actual(contexto["estado"], contexto["nodos"])
-    pantalla_juego.dibujar_fondo(ventana, nodo)
+    piezas.fondo(ventana, nodo)
 
     if mj["fase"] == "instrucciones":
         dibujo.dibujar_capa(ventana, (0, 0, 0), 120)

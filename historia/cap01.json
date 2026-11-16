@@ -97,6 +97,10 @@
     },
     "cap01_n03": {
       "texto": "Empieza a llover y Coraline tiene que quedarse adentro. Se aburre tanto que su papá, sin despegar la vista de la pantalla, le sugiere un reto: contar todas las puertas y ventanas de la casa y anotar todo lo azul que encuentre.",
+      "diseno": "exploracion",
+      "fondo": "estudio_lluvioso",
+      "titulo_escena": "El reto de papá",
+      "pregunta": "¿ACEPTAS EL RETO?",
       "canonico": true,
       "opciones": [
         {
@@ -126,15 +130,17 @@
     },
     "cap01_m01": {
       "texto": "Coraline recorre el departamento con su libreta. Hay puertas por todas partes: de cuartos, de alacenas, de armarios. ¿Podrá encontrarlas todas antes de que su papá la llame a cenar?",
+      "diseno": "exploracion",
+      "fondo": "estudio_lluvioso",
+      "titulo_escena": "Puertas y ventanas",
+      "pregunta": "¿LISTA PARA CONTAR?",
       "canonico": true,
       "imagen": "salon.jpg",
       "opciones": [],
       "minijuego": {
-        "tipo": "clic",
-        "instruccion": "Haz clic en las 14 puertas antes de que se acabe el tiempo.",
-        "tiempo": 30,
-        "figura": "puerta",
-        "cantidad": 14,
+        "tipo": "recorrido",
+        "instruccion": "Recorre la casa cuarto por cuarto y toca todas las puertas y ventanas que encuentres. Cuando termines un cuarto, sigue la flecha. La última puerta está en el salón.",
+        "tiempo": 90,
         "exito": {
           "destino": "cap01_n04",
           "efectos": {
@@ -150,6 +156,10 @@
     },
     "cap01_n04": {
       "texto": "Cuenta trece puertas que se abren y cierran sin problema. Pero hay una más: una puerta grande de madera café, tallada, en una esquina del salón. Está cerrada con llave. Su mamá guarda una llave negra y vieja en lo alto del marco de la cocina.",
+      "diseno": "exploracion",
+      "fondo": "salon_puerta",
+      "titulo_escena": "La puerta tallada",
+      "pregunta": "¿CÓMO LA ABRES?",
       "canonico": true,
       "opciones": [
         {
@@ -184,6 +194,10 @@
     },
     "cap01_n05": {
       "texto": "Detrás de la puerta solo hay una pared de ladrillos rojos. Su mamá le explica que, cuando dividieron la casa, taparon el paso hacia el departamento vacío de al lado. Cierra otra vez y devuelve la llave negra a su lugar.",
+      "diseno": "exploracion",
+      "fondo": "mama_llave",
+      "titulo_escena": "Detrás de la puerta",
+      "pregunta": "¿QUÉ HACES AHORA?",
       "canonico": true,
       "opciones": [
         {
@@ -213,6 +227,10 @@
     },
     "cap01_n06": {
       "texto": "Esa noche Coraline no puede dormir. Ve una sombra cruzar el pasillo y meterse al salón, justo por donde está la puerta. Cuando por fin se duerme, sueña con criaturas negras y pequeñitas, de ojos rojos, que cantan una canción que le pone los nervios de punta.",
+      "diseno": "exploracion",
+      "fondo": "pasillo_noche",
+      "titulo_escena": "Una sombra en la noche",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {

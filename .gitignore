@@ -8,3 +8,6 @@ partidas/*.json
 
 # El libro no se sube al repo
 *.pdf
+
+# Capturas de la vista previa
+capturas/

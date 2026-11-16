@@ -44,6 +44,20 @@ def cargar_historia(carpeta: str) -> dict:
     return nodos
 
 
+def cargar_capitulos(carpeta: str) -> dict:
+    """Lee el número y el título de cada capítulo, para mostrarlos en pantalla.
+
+    Regresa: {"cap01": {"numero": 1, "titulo": "La puerta del salón"}, ...}
+    La clave son las 5 primeras letras de los nodos de ese capítulo.
+    """
+    capitulos: dict = {}
+    for ruta in archivos_de_historia(carpeta):
+        datos: dict = cargar_archivo(ruta)
+        for nombre_nodo in datos["nodos"]:
+            capitulos[nombre_nodo[:5]] = {"numero": datos["capitulo"], "titulo": datos["titulo"]}
+    return capitulos
+
+
 def nodo_actual(estado: dict, nodos: dict) -> dict:
     """Regresa el nodo en el que va el jugador."""
     return nodos[estado["nodo_actual"]]

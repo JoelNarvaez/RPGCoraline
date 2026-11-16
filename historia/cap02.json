@@ -6,9 +6,12 @@
   "nodos": {
     "cap02_n01": {
       "texto": "Amanece con una niebla espesa. Coraline sale bien abrigada y se encuentra con la señorita Spink paseando a sus perros. La vecina le platica, como siempre, de sus años de gloria en el teatro... y la vuelve a llamar por un nombre equivocado.",
+      "diseno": "exploracion",
+      "fondo": "niebla_spink",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "mostrar_personaje": true,
-      "titulo_escena": "EL JARDIN",
+      "titulo_escena": "Mañana de niebla",
       "opciones": [
         {
           "texto": "Corregirla con paciencia y seguir platicando",
@@ -38,6 +41,10 @@
     },
     "cap02_n02": {
       "texto": "Coraline sube al ático a saludar al anciano del bigote. Él le dice muy serio que los ratones tienen un mensaje para ella: que no cruce la puerta. A Coraline le parece una tontería, pero el anciano lo repite dos veces.",
+      "diseno": "exploracion",
+      "fondo": "atico_ratones",
+      "titulo_escena": "El mensaje de los ratones",
+      "pregunta": "¿QUÉ LE DICES?",
       "canonico": true,
       "mostrar_personaje": false,
       "opciones": [
@@ -74,6 +81,10 @@
     },
     "cap02_n03": {
       "texto": "En la tarde toca en el departamento de las actrices. La sala está llena de perros, fotos antiguas y olor a dulces viejos. La señorita Spink y la señorita Forcible la invitan a tomar té con galletas duras como piedra.",
+      "diseno": "exploracion",
+      "fondo": "te_actrices",
+      "titulo_escena": "Té con las actrices",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "mostrar_personaje": true,
       "opciones": [
@@ -105,6 +116,10 @@
     },
     "cap02_n04": {
       "texto": "Al terminar el té, la señorita Forcible le lee las hojas que quedaron en la taza. Se pone pálida: dice que ve un gran peligro rondando a Coraline. La señorita Spink no está de acuerdo con lo que ve, y las dos se ponen a discutir.",
+      "diseno": "exploracion",
+      "fondo": "hojas_te",
+      "titulo_escena": "Las hojas del té",
+      "pregunta": "¿QUÉ LE DICES?",
       "canonico": true,
       "mostrar_personaje": true,
       "opciones": [
@@ -150,17 +165,19 @@
       "imagen": "salon.jpg"
     },
     "cap02_m01": {
-      "texto": "La señorita Forcible le pide ayuda: hay que señalar cada hoja de té antes de que el té se enfríe y las hojas pierdan su forma.",
+      "texto": "La señorita Forcible le pasa la taza a Coraline. En el fondo quedaron grumos de hojas de té, revueltos entre motitas. Según ella, si se juntan todos se ve la figura del peligro.",
+      "diseno": "exploracion",
+      "fondo": "hojas_te",
+      "titulo_escena": "El fondo de la taza",
+      "pregunta": "¿TE ANIMAS?",
       "canonico": true,
       "mostrar_personaje": false,
       "imagen": "salon.jpg",
       "opciones": [],
       "minijuego": {
-        "tipo": "clic",
-        "instruccion": "Haz clic en las 9 hojas de té de la taza.",
-        "tiempo": 15,
-        "figura": "hoja",
-        "cantidad": 9,
+        "tipo": "taza_te",
+        "instruccion": "Encuentra los 9 grumos de hojas de té en el fondo de la taza. Ojo: las motitas sueltas no cuentan.",
+        "tiempo": 25,
         "exito": {
           "destino": "cap02_n05",
           "efectos": {
@@ -181,6 +198,10 @@
     },
     "cap02_n05": {
       "texto": "La señorita Spink busca entre sus cajones y le regala una piedra con un agujero en medio. Le dice que a veces sirve contra las cosas malas, y que la lleve siempre con ella.",
+      "diseno": "exploracion",
+      "fondo": "piedra_spink",
+      "titulo_escena": "La piedra con agujero",
+      "pregunta": "¿QUÉ HACES CON ELLA?",
       "canonico": true,
       "mostrar_personaje": true,
       "opciones": [
@@ -230,6 +251,10 @@
     },
     "cap02_n06": {
       "texto": "Regresa a casa entre la niebla. Siente que el mundo de afuera está lleno de cosas escondidas. Aprieta la piedra en el puño: la idea del peligro le da miedo, pero también un poco de emoción.",
+      "diseno": "exploracion",
+      "fondo": "regreso_niebla",
+      "titulo_escena": "De regreso en la niebla",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "mostrar_personaje": false,
       "opciones": [

@@ -38,6 +38,19 @@ python main.py
 python -m herramientas.verificador
 ```
 
+También revisa que el texto de cada escena quepa en su diseño.
+
+## Cómo probar una escena sin jugar desde el inicio
+
+```bash
+python -m herramientas.vista_previa cap08_n03             # abre el juego en esa escena
+python -m herramientas.vista_previa cap08_n03 --captura   # guarda capturas/cap08_n03.png
+```
+
+## Diseños de escena
+
+Cada escena elige cómo se ve con `"diseno"` en su nodo (por defecto `pink_palace`). Hoy existen `pink_palace`, `exploracion`, `libreta` (hoja de cuaderno, cap01_n03 y cap01_m01) y `puerta` (puerta tallada, cap01_n04 y cap01_n05). Cada diseño es un archivo en `interfaz/disenos/` y se arma con las piezas de `interfaz/piezas.py`: paneles que se ajustan solos al texto, opciones y barra de controles. Para crear uno nuevo, ver las instrucciones en `interfaz/disenos/__init__.py`. Cada diseño tiene un dueño y se edita solo; `piezas.py` es compartido, así que si se cambia hay que avisar.
+
 ## Estructura
 
 ```
@@ -52,7 +65,10 @@ interfaz/               Todo lo que usa pygame
   dibujo.py             Texto en renglones, botones, imágenes          (Persona B)
   animaciones.py        Máquina de escribir y fundido                  (Persona A)
   pantalla_menu.py      Menú principal                                 (Persona B)
-  pantalla_juego.py     Texto del nodo y opciones                      (Persona A)
+  pantalla_juego.py     Flujo de la escena: clics, teclas, elegir      (Persona A)
+  piezas.py             Paneles, texto, opciones y controles           (compartido)
+  disenos/              Un archivo por diseño de escena                (cada uno su dueño)
+  fondos/               Fondos en pixel art dibujados con código       (cada uno su dueño)
   pantalla_inventario.py  Panel de objetos y estadísticas              (Persona B)
   pantalla_final.py     Pantalla de final                              (Persona B)
   pantalla_minijuego.py Instrucciones, minijuego y resultado           (Persona A)
@@ -65,6 +81,7 @@ historia/
 recursos/               Imágenes, fuentes y sonidos (con licencia libre)
 herramientas/
   verificador.py        Cuenta decisiones y busca nodos rotos          (Persona B)
+  vista_previa.py       Abre el juego directo en una escena            (compartido)
 partidas/               Partidas guardadas (no se suben al repo)
 docs/
   formato_nodo.md       Cómo se escribe un nodo de la historia
@@ -76,8 +93,11 @@ En momentos clave de la historia, en lugar de opciones aparece un reto. Ganar o 
 
 | Tipo | Cómo se juega | Dónde |
 |---|---|---|
-| Explorar (`clic`) | Encontrar y hacer clic en todas las figuras antes de que se acabe el tiempo | Cap. 1 (puertas), cap. 2 (hojas de té) |
-| Arrastrar (`arrastrar`) | Llevar un objeto con el mouse hasta su lugar | Cap. 3 (llave), cap. 11 (gato), cap. 13 (mantel) |
+| Recorrer la casa (`recorrido`) | Pixel art: cuarto por cuarto, tocar todas las puertas y ventanas; Coraline camina hacia lo que tocas. Termina en la puerta tallada del salón | Cap. 1 (contar puertas) |
+| Abrir la puerta (`llave_puerta`) | Pixel art: la puerta pequeña de cerca; arrastrar la llave helada hasta la cerradura. Pesa (va lenta y se cuelga) y tiembla de frío cerca de la puerta; si se suelta lejos, se cae | Cap. 3 (la llave) |
+| Leer las hojas (`taza_te`) | Pixel art: la taza vista desde arriba con el té dando vueltas; encontrar los 9 grumos de hojas entre las motitas. Al final forman una mano | Cap. 2 (hojas de té) |
+| Explorar (`clic`) | Encontrar y hacer clic en todas las figuras antes de que se acabe el tiempo | Sin usar por ahora |
+| Arrastrar (`arrastrar`) | Llevar un objeto con el mouse hasta su lugar | Cap. 11 (gato), cap. 13 (mantel) |
 | Buscar con la piedra (`buscar`) | La pantalla está a oscuras; el mouse es la piedra y solo a través de ella brilla la canica verdadera | Cap. 8, cap. 10 |
 | Escapar (`esquivar`) | Guiar a Coraline con el mouse esquivando enemigos | Cap. 4 (sombras), cap. 9 (otro padre), cap. 12 (la mano) |
 | Rápido (`presionar`) | Presionar Espacio muy rápido para cerrar la puerta | Cap. 11 |

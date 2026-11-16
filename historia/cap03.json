@@ -5,6 +5,10 @@
   "nodos": {
     "cap03_n01": {
       "texto": "Al día siguiente su mamá la lleva al centro a comprar ropa para la escuela. Coraline se enamora de unos guantes verdes fosforescentes, pero su mamá escoge camisas grises, iguales a las de todos los demás niños.",
+      "diseno": "exploracion",
+      "fondo": "tienda_ropa",
+      "titulo_escena": "Los guantes verdes",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -39,6 +43,10 @@
     },
     "cap03_n02": {
       "texto": "En casa, su mamá sale otra vez a hacer compras y la deja sola. El departamento está en silencio. Coraline recuerda la puerta del salón y la llave negra en lo alto de la cocina.",
+      "diseno": "exploracion",
+      "fondo": "cocina_sola",
+      "titulo_escena": "Sola en casa",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -89,15 +97,17 @@
     },
     "cap03_m01": {
       "texto": "La llave negra está helada y pesa más de lo que parece. La cerradura de la puerta del salón está al otro lado del cuarto.",
+      "diseno": "exploracion",
+      "fondo": "salon_puerta",
+      "titulo_escena": "La cerradura",
+      "pregunta": "¿TE ANIMAS?",
       "canonico": true,
       "imagen": "salon.jpg",
       "opciones": [],
       "minijuego": {
-        "tipo": "arrastrar",
-        "instruccion": "Arrastra la llave negra hasta la cerradura y suéltala ahí.",
-        "tiempo": 15,
-        "objeto": "llave",
-        "zona": "cerradura",
+        "tipo": "llave_puerta",
+        "instruccion": "Lleva la llave hasta la cerradura y suéltala con la punta en el hoyo. Pesa y está helada: se mueve lento y tiembla cerca de la puerta.",
+        "tiempo": 20,
         "exito": {
           "destino": "cap03_n03"
         },
@@ -113,6 +123,10 @@
     },
     "cap03_n03": {
       "texto": "Abre la puerta del salón. Esta vez no hay ladrillos: hay un pasillo oscuro y frío que huele a humedad, como un sótano viejo. Al fondo se ve una luz débil.",
+      "diseno": "exploracion",
+      "fondo": "pasillo_oscuro",
+      "titulo_escena": "El pasillo frío",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -193,6 +207,10 @@
     },
     "cap03_n04": {
       "texto": "Al final del pasillo hay un departamento idéntico al suyo, pero más bonito. En la cocina, una mujer igual a su mamá cocina pollo asado. Solo que es más alta, más pálida, y en lugar de ojos tiene dos botones negros. Le dice que es su otra madre.",
+      "diseno": "exploracion",
+      "fondo": "otra_cocina",
+      "titulo_escena": "La otra madre",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -227,6 +245,10 @@
     },
     "cap03_n05": {
       "texto": "Es la mejor comida que ha probado en su vida. Llega el otro padre, también con ojos de botón, y le sonríe. Le enseñan su otro cuarto: juguetes que caminan solos, dinosaurios de cuerda que vuelan. Desde los rincones, unas ratas negras la observan.",
+      "diseno": "exploracion",
+      "fondo": "otro_cuarto",
+      "titulo_escena": "El otro cuarto",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -261,6 +283,10 @@
     },
     "cap03_n06": {
       "texto": "La otra madre le dice que puede quedarse ahí para siempre. Coraline contesta que primero quiere salir a explorar. Los otros padres la despiden en la puerta, con sonrisas idénticas, moviendo la mano despacio.",
+      "diseno": "exploracion",
+      "fondo": "despedida_otros",
+      "titulo_escena": "Sonrisas idénticas",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {

@@ -46,3 +46,7 @@ DURACION_MENSAJE: float = 2.0     # segundos que se ve un aviso ("Partida guarda
 # Límites para que todo quepa en pantalla (los revisa el verificador)
 MAXIMO_OPCIONES: int = 4
 MAXIMO_LETRAS_TEXTO: int = 600
+
+# True: solo se muestran las opciones de la ruta canónica (la del libro) y el
+# jugador no puede tomar ramas. Las ramas siguen en los JSON; con False vuelven.
+SOLO_RUTA_CANONICA: bool = True
