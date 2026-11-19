@@ -1313,8 +1313,9 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
 
     """LA OTRA MADRE DE FRENTE, SEGUN LA IMAGEN DE JOEL. LOS BOTONES VAN APARTE.
 
-    pose: "normal" (manos juntas al frente), "charola" (carga el pollo asado)
-    o "despedir" (el brazo que saluda se dibuja aparte con dibujar_brazo_saludo).
+    pose: "normal" (manos juntas al frente), "charola" (carga el pollo asado),
+    "despedir" (el brazo que saluda se dibuja aparte con dibujar_brazo_saludo)
+    o "brazos_abiertos" (recibe a Coraline con los brazos estirados).
     """
 
     sombra = pygame.Surface((50, 8), pygame.SRCALPHA)
@@ -1370,6 +1371,19 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
     elif pose == "despedir":
         pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (x + 13, 184), (x + 15, 216), 3)
         pygame.draw.ellipse(lienzo, OTRA_PIEL, (x + 13, 215, 5, 8))
+
+    elif pose == "brazos_abiertos":
+        # LOS DOS BRAZOS ESTIRADOS HACIA LOS LADOS, COMO PARA ABRAZAR (CAP. 5)
+        for lado in [-1, 1]:
+            piel = OTRA_PIEL if lado < 0 else OTRA_PIEL_SOMBRA
+            codo = (x + lado * 26, 194)
+            mano = (x + lado * 38, 182)
+            pygame.draw.line(lienzo, piel, (x + lado * 13, 182), codo, 3)
+            pygame.draw.line(lienzo, piel, codo, mano, 3)
+            pygame.draw.ellipse(lienzo, OTRA_PIEL, (mano[0] - 3, mano[1] - 4, 6, 7))
+            for i in range(3):                                                     # dedos largos
+                pygame.draw.line(lienzo, OTRA_PIEL, (mano[0] + lado * 2, mano[1] - 2 + i * 2),
+                                 (mano[0] + lado * 6, mano[1] - 5 + i * 2))
 
     else:
         # MANOS JUNTAS ABAJO, AL FRENTE DE LA FALDA
@@ -1767,3 +1781,509 @@ def dibujar_coraline_chica(lienzo: pygame.Surface, x: int, y_piso: int, mira_der
     lienzo.blit(sombra, (x - sombra.get_width() // 2, y_piso - 4))
 
     lienzo.blit(sprite, (x - sprite.get_width() // 2, y_piso - sprite.get_height()))
+
+# --------------------------------------------------
+# EL GATO NEGRO (SPRITE)
+# --------------------------------------------------
+
+GATO_COLORES = {
+    "N": (19, 17, 25),        # pelo negro
+    "M": (36, 31, 44),        # pelo con un poco de luz (rayitas y hocico)
+    "L": (78, 68, 88),        # brillo del borde del pelo
+    "S": (8, 7, 12),          # sombra profunda (boca, cuello, pata)
+    "R": (214, 128, 126),     # rosa de la nariz y del interior de las orejas
+    "T": (168, 164, 178),     # bigotes
+}
+
+GATO_FILAS = [
+    ".................N...........................N......",
+    ".................NN.........................LN......",
+    ".................NNLL.....................NLNN......",
+    ".................NNRNN...................LRNNN......",
+    ".................NNRRNL.................LRRNNN......",
+    ".................NNRRRNLN.............LNRRRNNN......",
+    "................LNNRRRRRNL...........LNRRRRNNNL.....",
+    "................NNNRRRRRRNLN.......LNNRRRRRNNNN.....",
+    "................NNNRRRRRRRNNLLNLLNLNNRRRRRRNNNN.....",
+    "................NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "................NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    "...............NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.....",
+    ".............TTTNNNNNNNNNNNNNNMMMMMNNNNNNNNNNN...TTT",
+    "................TTTTTNNNNNNNMMMMMMMMMNNNNNNNTTTTT...",
+    "..................NNNTTTTNNMMMMRRRRMMMNNTTTTN.......",
+    "..................NNNNNNNTTTMMMRRRRMMTTTNNNN........",
+    "...................NNNNNNNMMMMMMSMMMMMMNNNNN........",
+    "...................TTTTTTTTTMMMMMMMMMTTTTTTTT.......",
+    "..........TTTTTTTTT...NNNNMMMSMMMMMMSSMNN....TTTTTTT",
+    "........................NNTTMMSSSSSSMTT.............",
+    "........................TTNNMMMMMMMMM..TT...........",
+    ".....................TTTNNSSSSMMMMM......TTT........",
+    "..................TTT...NNSSSSSSS...........TTT.....",
+    "................TT......NNNNNNNNN..............TT...",
+    "..............TT........NNNNNMNNN................TT.",
+    ".......................LNNNNNMNMN...................",
+    ".......................NNNNNNNNMN...................",
+    ".....................LLNMNNNNNNNN...................",
+    "....................LNNNMNMNNNNNN...................",
+    "....................LNNNNNMNMNNNN...................",
+    "...................LNNNNNNNNMNMNN...................",
+    "..................LMNMNNNNNNNNMNM...................",
+    "..................NNNMNMNNNNNNNNM...................",
+    ".................LNNNNNMNMNNNNNNNNLL................",
+    "................LNNNNNNNNMNMNNNNNNNN................",
+    "...............LMNMNNNNNNNNMNMNNNNNN................",
+    "...............NNNMNMNNNNNNNNMNMNNNN................",
+    "..............LNNNNNMNMNNNNNSNNMNMNN................",
+    "..............NNNNNNNNMNMNNNSNNNNMNM................",
+    ".............LNMNNNNNNNNMNMNSNNNNNNM................",
+    ".............NNMNMNNNNNNNNMNMNNNNNNN................",
+    "............LNNNNMNMNNNNNNNNMNMNNNNN................",
+    "............NNNNNNNMNMNNNNNNSNMNMNNN................",
+    "...........LMNNNNNNNNMNMNNNNSNNNMNMN................",
+    "..........LNMNMNNNNNNNNMNMNNSNNNNNMN................",
+    ".........LNNNNMNMNNNNNNNNMNMSNNNNNNN................",
+    ".........NNNNNNNMNMNNNNNNNNMSMNNNNNN................",
+    "........LMNNNNNNNNMNMNNNNNNNSMNMNNNN................",
+    "........NMNMNNNNNNNNMNMNNNNNSNNMNMNN................",
+    "........LNNMNMNNNNNNNNMNMNNNSNNNNMNM................",
+    "........NNNNNMNMNNNNNNNNMNMNSNNNNNNM................",
+    "........LNNNNNNMNMNNNNNNNNMNMNNNNNNN................",
+    "........MNNNNNNNNMNMNNNNNNNNMNMNNNNN................",
+    "........LNMNNNNNNNNMNMNNNNNNSNMNMNNN................",
+    "...NLLN..NMNMNNNNNNNNMNMNNNNSNNNMNMN................",
+    "...LNNN..LNNMNMNNNNNNNNMNMNNNNNNNNMN................",
+    "....NMN...NNNNMNMNNNNNNNNMNMNNNNNNNNNL..............",
+    "....LMNLLNNNNNNNMNMNNNNNNNNMNMNNNNNNNNL.............",
+    "....NNNMNMNNNNNNNNMNMNNNNNNNNMNMNNNNNNNN............",
+    "......LNNMNMNNNNNNNNMNMNNNNNNNNMNMNNNNNN............",
+    "...........MNMNNNNNNNNMNMNNNNNNNNMNMNNN.............",
+    ".............LNMNNNNNNNNMNMNNNNNNNNMNM..............",
+    "................NMNNNNNNN...MNNNNNNN................",
+]
+
+# CENTRO DE CADA OJO DENTRO DEL SPRITE YA CON CONTORNO (+1 PIXEL POR LADO)
+OJOS_GATO = [(25, 16), (39, 16)]
+
+# OJOS AZULES CON PARPADOS PESADOS (EL DERECHO MAS CAIDO, COMO EN LA IMAGEN)
+OJO_GATO_IZQUIERDO = [
+    "..SSSSSSS..",
+    ".SSSSSSSSS.",
+    "BBBBBPBBBBB",
+    "BCCBBPBBBBB",
+    "BCBBBPBBBBB",
+    ".BBBBPBBBB.",
+    "..BBBBBBB..",
+]
+
+OJO_GATO_DERECHO = [
+    "..SSSSSSS..",
+    ".SSSSSSSSS.",
+    "SSSSSSSSSSS",
+    "BCCBBPBBBBB",
+    "BCBBBPBBBBB",
+    ".BBBBPBBBB.",
+    "..BBBBBBB..",
+]
+
+OJO_GATO_CERRADO = [
+    "...........",
+    "...........",
+    "...........",
+    "SSSSSSSSSSS",
+    ".SSSSSSSSS.",
+    "...........",
+    "...........",
+]
+
+COLORES_OJO_GATO = {
+    "S": (8, 7, 12),         # parpado
+    "B": (92, 170, 232),     # azul
+    "C": (205, 238, 255),    # brillo
+    "P": (10, 12, 24),       # pupila rasgada
+}
+
+SPRITES_GATO = {}
+OJOS_GATO_ARMADOS = {}
+
+
+def sprite_gato(mira_derecha: bool, tamano: int = 1) -> pygame.Surface:
+
+    """ARMA EL SPRITE CON CONTORNO UNA SOLA VEZ (POR LADO Y TAMANO) Y LO GUARDA."""
+
+    clave = (mira_derecha, tamano)
+
+    if clave not in SPRITES_GATO:
+
+        sprite = con_contorno(armar_sprite(GATO_FILAS, GATO_COLORES))
+
+        if not mira_derecha:
+            sprite = pygame.transform.flip(sprite, True, False)
+
+        if tamano != 1:
+            sprite = pygame.transform.scale(sprite, (sprite.get_width() * tamano, sprite.get_height() * tamano))
+
+        SPRITES_GATO[clave] = sprite
+
+    return SPRITES_GATO[clave]
+
+
+def ojos_gato_armados(mira_derecha: bool, parpadea: bool, tamano: int) -> pygame.Surface:
+
+    """CAPA TRANSPARENTE DEL MISMO TAMANO QUE EL SPRITE, SOLO CON LOS OJOS."""
+
+    clave = (mira_derecha, parpadea, tamano)
+
+    if clave not in OJOS_GATO_ARMADOS:
+
+        base = sprite_gato(True, 1)
+        capa = pygame.Surface(base.get_size(), pygame.SRCALPHA)
+
+        if parpadea:
+            izquierdo = armar_sprite(OJO_GATO_CERRADO, COLORES_OJO_GATO)
+            derecho = izquierdo
+        else:
+            izquierdo = armar_sprite(OJO_GATO_IZQUIERDO, COLORES_OJO_GATO)
+            derecho = armar_sprite(OJO_GATO_DERECHO, COLORES_OJO_GATO)
+
+        for (ojo_x, ojo_y), ojo in zip(OJOS_GATO, [izquierdo, derecho]):
+            capa.blit(ojo, (ojo_x - ojo.get_width() // 2, ojo_y - ojo.get_height() // 2))
+
+        if not mira_derecha:
+            capa = pygame.transform.flip(capa, True, False)
+
+        if tamano != 1:
+            capa = pygame.transform.scale(capa, (capa.get_width() * tamano, capa.get_height() * tamano))
+
+        OJOS_GATO_ARMADOS[clave] = capa
+
+    return OJOS_GATO_ARMADOS[clave]
+
+
+def dibujar_gato(lienzo: pygame.Surface, x: int, y_piso: int, mira_derecha: bool, tiempo: float,
+                 tamano: int = 1) -> None:
+
+    """GATO NEGRO SENTADO CON SU SOMBRA. x ES EL CENTRO DEL SPRITE Y y_piso DONDE APOYA LAS PATAS.
+
+    Parpadea despacio cada 5 segundos. tamano 1 O 2 (AGRANDADO).
+    """
+
+    sprite = sprite_gato(mira_derecha, tamano)
+    izquierda = x - sprite.get_width() // 2
+    arriba = y_piso - sprite.get_height()
+
+    sombra = pygame.Surface((sprite.get_width() * 2 // 3, 8 * tamano), pygame.SRCALPHA)
+    pygame.draw.ellipse(sombra, (0, 0, 0, 100), sombra.get_rect())
+    lienzo.blit(sombra, (x - sombra.get_width() // 2, y_piso - 5 * tamano))
+
+    lienzo.blit(sprite, (izquierda, arriba))
+
+    parpadea = (tiempo + 1.3) % 5 < 0.18
+    lienzo.blit(ojos_gato_armados(mira_derecha, parpadea, tamano), (izquierda, arriba))
+
+# --------------------------------------------------
+# LAS VECINAS JOVENES (ACROBATAS)
+# --------------------------------------------------
+
+SPINK_JOVEN_COLORES = {
+    "P": (239, 192, 164),     # piel
+    "Q": (200, 140, 122),     # piel en sombra
+    "R": (222, 151, 137),     # chapitas
+    "H": (160, 52, 44),       # pelo rojo
+    "L": (214, 84, 58),       # brillo del pelo
+    "S": (96, 36, 40),        # pelo en sombra
+    "V": (87, 157, 101),      # traje verde
+    "W": (142, 197, 119),     # luz del traje
+    "X": (49, 105, 77),       # sombra del traje
+    "Y": (49, 105, 77),       # rayas (no se usan en Spink)
+    "B": (255, 245, 222),     # blanco del ojo
+    "O": (57, 48, 47),        # pupila
+    "M": (151, 58, 69),       # boca
+    "A": (48, 32, 43),        # pestanas y linea del parpado
+    "E": (120, 190, 110),     # sombra de ojos verde
+}
+
+FORCIBLE_JOVEN_COLORES = {
+    "P": (241, 194, 166),
+    "Q": (198, 136, 118),
+    "R": (222, 151, 137),
+    "H": (92, 54, 43),        # pelo cafe
+    "L": (151, 91, 59),
+    "S": (52, 34, 37),
+    "V": (208, 92, 109),      # traje rosa
+    "W": (243, 143, 151),
+    "X": (145, 55, 75),
+    "Y": (120, 40, 60),       # rayas del traje
+    "B": (255, 245, 222),
+    "O": (57, 48, 47),
+    "M": (151, 58, 69),
+    "A": (48, 32, 43),
+    "E": (243, 143, 151),     # sombra de ojos rosa
+}
+
+SPINK_JOVEN_FILAS = [
+    "......................H.....................",
+    "...................HHHHHHH..................",
+    "..................HHHLLHHHH.................",
+    ".................HHHLHHHHHHH................",
+    "...............H.HHHHHHHHHHH.H..............",
+    ".............HHHHHHHHHHHHHHHHHHH............",
+    ".............HLHHHHHHHHHHSHHLHHH............",
+    "............HHHHHHHHHHHHSHHHHHHHH...........",
+    ".............HHHHHHHHHHHHHHHHHHH............",
+    ".............HHHHHLHHHHHHHHHHHHH............",
+    "..............LHLLLLLLSLHHHHHHH.............",
+    ".............HHLLHHHHHHHHHHLHHHH............",
+    "............HHHHHHHHHHHHHHHHHHHHH...........",
+    "............HHHHHHHHHHHHHHHHHHHHH...........",
+    "............HHHSPPPSPPPPPSPPPHHHH...........",
+    "......PPP...HHHPSSSSPPPPPSSSSPHHH...........",
+    ".....PPPPP.SHHPPPPPPPPPPPPPPPPHHHS..........",
+    ".....PPPPP.SHHPPEEEEPPPPPEEEEQQHHS..........",
+    ".....PPPPP.SSPPAAAAAAPPPAAAAAAQQSS..........",
+    "......PPP..HHPPABOOBPPPPPOOBBAQQSS..........",
+    "......PPP.SHHPPPBOOBPPPPPOOBBPQQSSS.........",
+    "......PPPP.HHPPPBOOBPPPPPOOBBPQQSS..........",
+    ".......PPP.HHPPPBOOBPPPPPOOBBPQQSS..........",
+    ".......PPP.HHPPPPPPPPPPPPPPPPPQQSS..........",
+    ".......PPP.HHPPRRPPPPPQQPPPPRRQQSS..........",
+    ".......PPP.HHSPPPPPPPPPPPPPPPQQSSS..........",
+    ".......PPP..SSPPPPPPMPPPMPPPPQQSS...........",
+    ".......PPPP..SSPPPPPPMMMPPPPPQSS............",
+    "........PPP...SSPPPPPPPPPPPPPSS.............",
+    "........PPP....SSPPPPPPPPPPPSS..............",
+    "........PPPP....SSSPPPPPPPSSS...............",
+    "........PPPPP.....SSPPPPQSS.................",
+    ".........PPPPP......PPPPQ...................",
+    "..........PPPPPV..PPPPPPQPP..V..............",
+    "...........PPVVVVVVPQQQQQPVVVVVV............",
+    "............PVVVVVVPPPPPPPVVVVVV............",
+    "............VVVVVVVVPPPPPXVVVVVVVP..........",
+    ".............VVVVVWWVPPPVXXVVVVVPPPP........",
+    ".............VVVVVWWVPPPVXXVVVVVPPPPPP......",
+    "...............VVWWWVVVVVXXXXV..PPPPPP......",
+    "................VVWWVVVVVXXXX......PPPP.....",
+    "................VVWWVVVVVXXXX.......PPPP....",
+    "................VVWWVVVVVXXXX........PPPP...",
+    "................VVWWVVVVVXXXX........PPPP...",
+    ".................VWWVVVVVXXX..........PPPP..",
+    ".................VWWVVVVVXXX...........PPPP.",
+    ".................VWWVVVVVXXX...........PPPPP",
+    ".................XXXXXXXXXXX...........PPPPP",
+    ".................VWWVVVVVXXX...........PPPPP",
+    ".................VWWVVVVVXXX............PPP.",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    "................VVWWVVVVXXXXX...............",
+    "................VVWWVVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVVWVVVVXXXXX...............",
+    "................VVVVVVVVXXXXX...............",
+    ".................VVVVVVVXXXX................",
+    ".................PPVVVVVXXPQ................",
+    ".................PPPPQ..PPPQ................",
+    ".................PPPPQ..PPPQ................",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    "................PPPPQQ..PPPQQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPQQ....PPPQQ..............",
+    "................PVPQQ....PPVQQ..............",
+    "................VVVQQ....PVVVQ..............",
+    "................WWWV.....VWWWQ..............",
+    "...............VVXVV.....VVVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXV.......VVVXQ.............",
+    "...............VVXV.......VVVXQ.............",
+    "..............VVVXV.......VVVXV.............",
+    "............XVVVVX.........XVVVVX...........",
+    "...........VVWVVVVV.......VVWVVVVV..........",
+    "..........XVVVVVVVVX.....XVVVVVVVVX.........",
+    "...........XXVVVVXX.......XXVVVVXX..........",
+    "............XXXXXX.........XXXXXX...........",
+    "............................................",
+    "............................................",
+]
+
+FORCIBLE_JOVEN_FILAS = [
+    "....................HHHHH...................",
+    "...................HHHHHHH..................",
+    "..................HHHHHHHHH.................",
+    "..................HHHLLHHHH.................",
+    ".............HHH..HHHHHHHHH..HHH............",
+    "............HHHHH.HHHHHSHHH.HHHHH...........",
+    "...........HHHHHHHHHHHHHHHHHHHHHHH..........",
+    "..........HHHLLHHHHHHHHHHHHHHLLHHHH.........",
+    "..........HHHHHHHHHLHHHHHHHHHHHHHHH.........",
+    "..........HHHHHSHHHLLLLLHHHHHHHSHHH.........",
+    "...........HHHHHHHHHHHHHHHHHHHHHHH..........",
+    "............HHHHHHHHHHHHHHHHHHHHH...........",
+    "............HHHHHHHHHHHHHHHHHHHHH...........",
+    "............HHHSPPPSPPPPPSPPPHHHH...........",
+    "............HHHPSSSSPPPPPSSSSPHHH...PPP.....",
+    "...........SHHPPPPPPPPPPPPPPPPHHHS.PPPPP....",
+    "...........SHHPPEEEEPPPPPEEEEQQHHS.PPPPP....",
+    "...........SSPPAAAAAAPPPAAAAAAQQSS.PPPPP....",
+    "..........HHHPPABOOBPPPPPOOBBAQQHHH.PPP.....",
+    ".........HHHHHPPBOOBPPPPPOOBBPQHHHHHPPP.....",
+    "........HHLLHHHPBOOBPPPPPOOBBPHHHHHHHPP.....",
+    "........HHHHHHHPBOOBPPPPPOOBBPHHHHHHHP......",
+    ".......SHHHHHHHPPPPPPPPPPPPPPPHHHHHHHP......",
+    "........SHHHHHPRRPPPPPQQPPPPRRQHHHHHPP......",
+    "........SSHHHSPPPPPPPPPPPPPPPQQSHHHPPP......",
+    ".........SSSHSPPPPPPMPPPMPPPPQQSHSSPPP......",
+    ".........SHHHHHPPPPPPMMMPPPPPQHHHHHPPP......",
+    ".........SHHLLHSPPPPPPPPPPPPPSHHHHHPP.......",
+    "........SHHHHHHHSPPPPPPPPPPPSHHHHHHHP.......",
+    ".........SHHHHH.SSSPPPPPPPSSS.HHHHHPP.......",
+    ".........SHHHHH...SSPPPPQSS...HHHHHPP.......",
+    "...........SHSSS....PPPPQ....SSPHPPP........",
+    "...........SSSSV..PPPPPPQPP..VPPPPP.........",
+    "..........SSSVVVVVVPQQQQQPVVVVVVPPS.........",
+    "...........SSVVVVVVPPPPPPPVVVVVVPS..........",
+    "...........PVVVVVVVVPPPPPXVVVVVVVS..........",
+    ".........PPPPVVVVVWWVPPPVXXVVVVV............",
+    ".......PPPPPPVVVVVXXXPPPXYYVVVVV............",
+    ".......PPPPPP..VVWWWVVVVVXXXXV..............",
+    "......PPPP......VWWWVVVVVXXXX...............",
+    ".....PPPP.......VVWWVVVVVXXXX...............",
+    "....PPPP........VVWWVVVVVXXXX...............",
+    "....PPPP........VVWWVVVVVXXXX...............",
+    "...PPPP.........XXXXXXXXXYYYY...............",
+    "..PPPP..........VVWWVVVVVXXXX...............",
+    ".PPPPP...........VWWVVVVVXXX................",
+    ".PPPPP...........VWWVVVVVXXX................",
+    ".PPPPP...........VWWVVVVVXXX................",
+    "..PPP............XXXXXXXXXXX................",
+    ".................XXXXXXXXYYY................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    ".................VWWVVVVXXXX................",
+    "................XXXXXXXXYYYYY...............",
+    "................VVWWVVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVWWWVVVXXXXX...............",
+    "................VVVWVVVVXXXXX...............",
+    "................VVVVVVVVXXXXX...............",
+    ".................VVVVVVVXXXX................",
+    ".................PPVVVVVXXPQ................",
+    ".................PPPPQ..PPPQ................",
+    ".................PPPPQ..PPPQ................",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    ".................PPPQQ..PPPQQ...............",
+    "................PPPPQ...PPPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPPQ....PPPQ...............",
+    "................PPPQQ....PPPQQ..............",
+    "................PPPQQ....PPPQQ..............",
+    "................PPPQQ....PPPQQ..............",
+    "................PPPQQ....PPPQQ..............",
+    "................PVPQQ....PPVQQ..............",
+    "................VVVQ.....PVVVQ..............",
+    "...............VWWWV.....VWWWV..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVX..............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXVQ......VVVXQ.............",
+    "...............VVXV.......VVVXQ.............",
+    "...............VVXV.......VVVXQ.............",
+    "..............VVVXV.......VVVXV.............",
+    "............XVVVVX.........XVVVVX...........",
+    "...........VVWVVVVV.......VVWVVVVV..........",
+    "..........XVVVVVVVVX.....XVVVVVVVVX.........",
+    "...........XXVVVVXX.......XXVVVVXX..........",
+    "............XXXXXX.........XXXXXX...........",
+    "............................................",
+    "............................................",
+]
+
+SPRITES_VECINAS = {}
+
+
+def sprite_vecina(quien: str, tamano: int = 1) -> pygame.Surface:
+
+    """ARMA EL SPRITE CON CONTORNO UNA SOLA VEZ (POR PERSONAJE Y TAMANO) Y LO GUARDA.
+
+    quien puede ser "spink" o "forcible". tamano 1 O 2 (AGRANDADA).
+    """
+
+    clave = (quien, tamano)
+
+    if clave not in SPRITES_VECINAS:
+
+        if quien == "spink":
+            sprite = armar_sprite(SPINK_JOVEN_FILAS, SPINK_JOVEN_COLORES)
+        else:
+            sprite = armar_sprite(FORCIBLE_JOVEN_FILAS, FORCIBLE_JOVEN_COLORES)
+
+        sprite = con_contorno(sprite)
+
+        if tamano != 1:
+            sprite = pygame.transform.scale(sprite, (sprite.get_width() * tamano, sprite.get_height() * tamano))
+
+        SPRITES_VECINAS[clave] = sprite
+
+    return SPRITES_VECINAS[clave]
+
+
+def dibujar_vecina(lienzo: pygame.Surface, quien: str, x: int, y_piso: int, tamano: int = 1) -> None:
+
+    """UNA VECINA JOVEN CON SU SOMBRA. x ES EL CENTRO DE SUS PIES Y y_piso DONDE PISA."""
+
+    sprite = sprite_vecina(quien, tamano)
+
+    sombra = pygame.Surface((sprite.get_width() * 2 // 3, 8 * tamano), pygame.SRCALPHA)
+    pygame.draw.ellipse(sombra, (0, 0, 0, 100), sombra.get_rect())
+    lienzo.blit(sombra, (x - sombra.get_width() // 2, y_piso - 4 * tamano))
+
+    lienzo.blit(sprite, (x - sprite.get_width() // 2, y_piso - sprite.get_height()))
+
+
+def dibujar_spink_joven(lienzo: pygame.Surface, x: int, y_piso: int, tamano: int = 1) -> None:
+
+    """LA SENORITA SPINK JOVEN, CON TRAJE VERDE. x ES EL CENTRO DE SUS PIES."""
+
+    dibujar_vecina(lienzo, "spink", x, y_piso, tamano)
+
+
+def dibujar_forcible_joven(lienzo: pygame.Surface, x: int, y_piso: int, tamano: int = 1) -> None:
+
+    """LA SENORITA FORCIBLE JOVEN, CON TRAJE ROSA. x ES EL CENTRO DE SUS PIES."""
+
+    dibujar_vecina(lienzo, "forcible", x, y_piso, tamano)

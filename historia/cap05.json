@@ -5,6 +5,10 @@
   "nodos": {
     "cap05_n01": {
       "texto": "Su mamá no ha vuelto. Coraline se prepara pan tostado, cena pizza congelada y espera. Su papá tampoco llega. Se va a dormir sola en la casa vacía, con todas las luces prendidas.",
+      "diseno": "exploracion",
+      "fondo": "cena_sola",
+      "titulo_escena": "Una casa vacía",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -33,6 +37,10 @@
     },
     "cap05_r01": {
       "texto": "[ESQUELETO DE RAMA] Afuera solo hay oscuridad y el ruido del viento entre los árboles. Coraline regresa, cierra la puerta y espera.",
+      "diseno": "exploracion",
+      "fondo": "jardin_noche",
+      "titulo_escena": "Afuera, en la oscuridad",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -50,6 +58,10 @@
     },
     "cap05_n02": {
       "texto": "En la mañana sigue sola. Baja con las vecinas y les cuenta que sus padres desaparecieron. Ellas apenas la escuchan: le hablan de unos recortes de periódico de su época de teatro que acaban de encontrar.",
+      "diseno": "exploracion",
+      "fondo": "recortes_vecinas",
+      "titulo_escena": "Recortes de periódico",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -67,6 +79,10 @@
     },
     "cap05_r02": {
       "texto": "[ESQUELETO DE RAMA] Las vecinas le sirven té y le aseguran que sus papás seguro se fueron de viaje. Coraline se da cuenta de que no la van a ayudar y sube.",
+      "diseno": "exploracion",
+      "fondo": "te_actrices",
+      "titulo_escena": "Té y pretextos",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -79,6 +95,10 @@
     },
     "cap05_n03": {
       "texto": "El gato negro aparece en el jardín y la mira. Coraline le pregunta si sabe dónde están sus padres. El gato parpadea despacio, entra a la casa y se detiene frente al espejo del pasillo.",
+      "diseno": "exploracion",
+      "fondo": "espejo_pasillo",
+      "titulo_escena": "El gato y el espejo",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -106,6 +126,10 @@
     },
     "cap05_r03": {
       "texto": "[ESQUELETO DE RAMA] El gato sale, pero vuelve a entrar por la ventana y se sienta frente al espejo, muy digno. Coraline se rinde y mira.",
+      "diseno": "exploracion",
+      "fondo": "espejo_pasillo",
+      "titulo_escena": "Un gato muy digno",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -123,6 +147,10 @@
     },
     "cap05_n04": {
       "texto": "En el espejo aparecen su mamá y su papá, pálidos, como atrapados del otro lado. Su papá escribe con el dedo en el vidrio una sola palabra: AYÚDANOS. Luego el espejo vuelve a ser un espejo normal.",
+      "diseno": "exploracion",
+      "fondo": "espejo_padres",
+      "titulo_escena": "Ayúdanos",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -145,6 +173,10 @@
     },
     "cap05_r04": {
       "texto": "[ESQUELETO DE RAMA] El vidrio ni siquiera tiembla. Coraline se lastima las manos y se sienta en el suelo a pensar. Luego va al teléfono.",
+      "diseno": "exploracion",
+      "fondo": "espejo_pasillo",
+      "titulo_escena": "El vidrio no cede",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -157,6 +189,10 @@
     },
     "cap05_n05": {
       "texto": "El policía no le cree y le dice que espere a que vuelvan. Esa noche, Coraline le cuenta al gato la vez que su papá se quedó quieto mientras lo picaban unas avispas, para que ella pudiera escapar. Ser valiente es tener miedo y hacer lo correcto de todos modos.",
+      "diseno": "exploracion",
+      "fondo": "valentia_gato",
+      "titulo_escena": "Ser valiente",
+      "pregunta": "¿QUÉ DECIDES?",
       "canonico": true,
       "opciones": [
         {
@@ -179,6 +215,10 @@
     },
     "cap05_n06": {
       "texto": "Abre la puerta con la llave negra y cruza. La otra madre la recibe con los brazos abiertos. Coraline la acusa de haberse llevado a sus padres; ella lo niega con voz dulce. El gato, desde un rincón, le susurra: desafíala, le encantan los juegos.",
+      "diseno": "exploracion",
+      "fondo": "bienvenida_otra_madre",
+      "titulo_escena": "Los brazos abiertos",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -207,6 +247,10 @@
     },
     "cap05_r05": {
       "texto": "[ESQUELETO DE RAMA] La otra madre se ríe bajito y la manda a dormir, como si fuera un berrinche. Coraline se acuesta furiosa.",
+      "diseno": "exploracion",
+      "fondo": "bienvenida_otra_madre",
+      "titulo_escena": "Una risa bajita",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {

@@ -51,6 +51,23 @@ python -m herramientas.vista_previa cap08_n03 --captura   # guarda capturas/cap0
 
 Cada escena elige cómo se ve con `"diseno"` en su nodo (por defecto `pink_palace`). Hoy existen `pink_palace`, `exploracion`, `libreta` (hoja de cuaderno, cap01_n03 y cap01_m01) y `puerta` (puerta tallada, cap01_n04 y cap01_n05). Cada diseño es un archivo en `interfaz/disenos/` y se arma con las piezas de `interfaz/piezas.py`: paneles que se ajustan solos al texto, opciones y barra de controles. Para crear uno nuevo, ver las instrucciones en `interfaz/disenos/__init__.py`. Cada diseño tiene un dueño y se edita solo; `piezas.py` es compartido, así que si se cambia hay que avisar.
 
+## Escenas del capítulo 5
+
+Todas usan el diseño `exploracion` y un fondo en pixel art de `interfaz/fondos/`, igual que los capítulos 1 al 4. Reutilizan a Coraline (impermeable y pijama), el gato, las vecinas, la mamá y la otra madre de `personajes.py`, y los cuartos de `cocina_sola`, `regreso_niebla`, `sala_actrices` y `despedida_otros`.
+
+| Nodo | Fondo | Qué se ve |
+|---|---|---|
+| `cap05_n01` | `cena_sola` | La cocina de noche, Coraline en pijama cenando sola bajo el foco |
+| `cap05_r01` | `jardin_noche` | La casona de noche, con viento; solo las ventanas de Coraline prendidas |
+| `cap05_n02` | `recortes_vecinas` | Las vecinas con su álbum y recortes de periódico; nadie le hace caso a Coraline |
+| `cap05_r02` | `te_actrices` | (reutilizado del cap. 2) El té con las vecinas |
+| `cap05_n03`, `cap05_r03`, `cap05_r04` | `espejo_pasillo` | El pasillo de la casa y el gato sentado frente al espejo |
+| `cap05_n04` | `espejo_padres` | Los papás pálidos dentro del espejo; el papá escribe AYÚDANOS con el dedo |
+| `cap05_n05` | `valentia_gato` | El cuarto de noche, el teléfono, el gato en la cama y el recuerdo de las avispas |
+| `cap05_n06`, `cap05_r05` | `bienvenida_otra_madre` | La otra madre con los brazos abiertos; el gato le susurra desde el rincón |
+
+En `personajes.py` se agregó la pose `"brazos_abiertos"` de la otra madre; las poses que ya existían no cambiaron.
+
 ## Estructura
 
 ```

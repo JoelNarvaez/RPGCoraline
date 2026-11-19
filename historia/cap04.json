@@ -5,6 +5,9 @@
   "nodos": {
     "cap04_n01": {
       "texto": "Afuera, la casa es casi igual. El departamento de las vecinas tiene letreros de focos que parpadean como en una marquesina. Sobre un muro está el gato negro del jardín. Y aquí, el gato habla.",
+      "diseno": "exploracion",
+      "titulo_escena": "El gato del jardin",
+      "pregunta": "¿QUE HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -23,10 +26,14 @@
           "canonica": false
         }
       ],
-      "imagen": "casa.jpg"
+      "fondo": "exterior_gato"
     },
+
     "cap04_r01": {
       "texto": "[ESQUELETO DE RAMA] Coraline sigue caminando, pero el gato la sigue de lejos, como quien no quiere la cosa. Al final ella se detiene y lo saluda.",
+      "diseno": "exploracion",
+      "titulo_escena": "El gato del jardin",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -40,37 +47,46 @@
           }
         }
       ],
-      "imagen": "casa.jpg"
+      "fondo": "exterior_gato"
     },
-    "cap04_n02": {
-      "texto": "El gato le explica que no tiene nombre porque los gatos saben quiénes son. Le advierte que este lugar no es bueno: a ella, la otra madre, le gusta tener algo que amar... o algo que comer.",
-      "canonico": true,
-      "opciones": [
-        {
-          "texto": "Preguntarle cómo llegó él hasta aquí",
-          "destino": "cap04_n03",
-          "canonica": true,
-          "efectos": {
-            "estadisticas": {
-              "confianza_gato": 1
-            }
-          }
-        },
-        {
-          "texto": "Ofrecerle un nombre",
-          "destino": "cap04_r02",
-          "canonica": false,
-          "efectos": {
-            "estadisticas": {
-              "confianza_gato": -1
-            }
+
+
+  "cap04_n02": {
+    "texto": "El gato ladea la cabeza y observa a Coraline con sus brillantes ojos amarillos. —No tengo nombre —responde tranquilamente—. Los gatos sabemos quiénes somos. Coraline lo mira sorprendida. El gato se acerca un poco y baja la voz: —Este lugar no es bueno. A ella le gusta tener algo que amar... o algo que comer.",
+    "diseno": "exploracion",
+    "fondo": "gato_dialogo",
+    "titulo_escena": "Una conversacion inesperada",
+    "pregunta": "¿QUE LE PREGUNTAS?",
+    "canonico": true,
+    "opciones": [
+      {
+        "texto": "Preguntarle cómo llegó él hasta aquí",
+        "destino": "cap04_n03",
+        "canonica": true,
+        "efectos": {
+          "estadisticas": {
+            "confianza_gato": 1
           }
         }
-      ],
-      "imagen": "jardin.jpg"
-    },
+      },
+      {
+        "texto": "Ofrecerle un nombre",
+        "destino": "cap04_r02",
+        "canonica": false,
+        "efectos": {
+          "estadisticas": {
+            "confianza_gato": -1
+          }
+        }
+      }
+    ]
+  },
+
     "cap04_r02": {
       "texto": "[ESQUELETO DE RAMA] El gato la mira con desprecio y le dice que los nombres son para la gente que no sabe quién es. Luego, ya más calmado, le cuenta cómo llegó.",
+      "diseno": "exploracion",
+      "titulo_escena": "Las advertencias del gato",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -84,10 +100,15 @@
           }
         }
       ],
-      "imagen": "jardin.jpg"
+      "fondo": "exterior_gato"
     },
+
     "cap04_n03": {
       "texto": "Coraline entra al departamento de las vecinas. Es un teatro oscuro lleno de perros sentados en las butacas. En el escenario, unas versiones jóvenes de la señorita Spink y la señorita Forcible actúan una obra muy extraña.",
+      "diseno": "exploracion",
+      "fondo": "teatro_vecinas",
+      "titulo_escena": "El teatro de las vecinas",
+      "pregunta": "¿QUE DECIDES HACER?",
       "canonico": true,
       "opciones": [
         {
@@ -106,11 +127,15 @@
             }
           }
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
+
     "cap04_r03": {
       "texto": "[ESQUELETO DE RAMA] Los perros gruñen al mismo tiempo. Las actrices se detienen y la miran sin parpadear. Coraline se baja y se sienta en una butaca.",
+      "diseno": "exploracion",
+      "fondo": "te_actrices",
+      "titulo_escena": "Una interrupcion inesperada",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -121,8 +146,13 @@
       ],
       "imagen": "teatro.jpg"
     },
+
     "cap04_n04": {
       "texto": "Un perro le ofrece chocolates de una bolsita. La obra se vuelve cada vez más rara: las actrices hacen un truco de magia que sale terriblemente mal, y el público aplaude como si nada. Coraline siente un escalofrío.",
+      "diseno": "exploracion",
+      "fondo": "teatro_funcion",
+      "titulo_escena": "Una funcion muy extraña",
+      "pregunta": "¿QUE HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -140,11 +170,15 @@
             }
           }
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
+
     "cap04_r04": {
       "texto": "[ESQUELETO DE RAMA] Coraline aplaude y aplaude. Por un momento ya no sabe por qué lo hace. Se obliga a parar y sale del teatro.",
+      "diseno": "exploracion",
+      "fondo": "teatro_funcion",
+      "titulo_escena": "Los aplausos interminables",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -152,11 +186,15 @@
           "destino": "cap04_n05",
           "canonica": true
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
+
     "cap04_n05": {
       "texto": "De regreso, los otros padres la esperan. La otra madre pone en la mesa una cajita con dos botones negros, una aguja y un carrete de hilo. Si quiere quedarse para siempre, solo tiene que dejar que se los cosan.",
+      "diseno": "exploracion",
+      "fondo": "cocina_propuesta",
+      "titulo_escena": "La propuesta de la otra madre",
+      "pregunta": "¿QUE DECIDES HACER?",
       "canonico": true,
       "opciones": [
         {
@@ -187,8 +225,13 @@
       ],
       "imagen": "cocina.jpg"
     },
+
     "cap04_r05": {
       "texto": "[ESQUELETO DE RAMA] La otra madre sonríe: aquí el tiempo sobra. Pero algo en esa sonrisa le dice a Coraline que no debe esperar. Dice que no.",
+      "diseno": "exploracion",
+      "fondo": "otra_cocina",
+      "titulo_escena": "Una decision apresurada",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -204,8 +247,13 @@
       ],
       "imagen": "cocina.jpg"
     },
+
     "cap04_m01": {
       "texto": "Coraline da media vuelta y corre hacia el pasillo oscuro. Las sombras de las paredes se despegan y empiezan a moverse a su alrededor.",
+      "diseno": "exploracion",
+      "fondo": "huida_pasillo",
+      "titulo_escena": "La huida de Coraline",
+      "pregunta": "¡ESQUIVA LAS SOMBRAS!",
       "canonico": true,
       "imagen": "pasillo.jpg",
       "opciones": [],
@@ -234,8 +282,12 @@
         }
       }
     },
+
     "cap04_n06": {
       "texto": "La otra madre deja de sonreír, pero la deja ir. Coraline corre por el pasillo oscuro: siente que algo muy viejo y muy lento la sigue. Choca contra un sillón y abre los ojos. Está en su salón, y detrás de la puerta otra vez hay ladrillos.",
+      "diseno": "exploracion",
+      "titulo_escena": "De vuelta en casa",
+      "pregunta": "¿QUE HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -254,10 +306,14 @@
           }
         }
       ],
-      "imagen": "salon.jpg"
+      "fondo": "salon_regreso"
     },
+
     "cap04_r06": {
       "texto": "[ESQUELETO DE RAMA] Solo ve ladrillos rojos. Pero jura que, un segundo antes, algo pálido se asomaba entre ellos. Cierra con llave.",
+      "diseno": "exploracion",
+      "titulo_escena": "Algo entre los ladrillos",
+      "pregunta": "¿QUE HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -266,7 +322,7 @@
           "canonica": true
         }
       ],
-      "imagen": "salon.jpg"
+      "fondo": "salon_regreso"
     }
   }
 }
