@@ -21,10 +21,12 @@ from interfaz.disenos import pink_palace
 from interfaz.disenos import exploracion
 from interfaz.disenos import libreta
 from interfaz.disenos import puerta
+from interfaz.disenos import exploracion_derecha
 
 DISENOS = {
     "pink_palace": pink_palace,
     "exploracion": exploracion,
+    "exploracion_derecha": exploracion_derecha,
     "libreta": libreta,
     "puerta": puerta,
 }

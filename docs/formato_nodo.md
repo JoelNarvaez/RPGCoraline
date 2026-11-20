@@ -35,7 +35,8 @@ Una rama puede regresar a la ruta canónica apuntando su `destino` a un nodo `ca
 | `final` | Solo en finales | `"canonico"`, `"bueno"` o `"malo"` |
 | `imagen` | No | Imagen de fondo, de `recursos/imagenes/` (ej. `"sotano.png"`). Si no tiene, se usa `casarosa.webp` |
 | `fondo` | No | Fondo dibujado con código y animado, de `interfaz/fondos/` (ej. `"estudio_lluvioso"`). Si lo tiene, se usa en lugar de `imagen` |
-| `diseno` | No | Cómo se ve la escena: un archivo de `interfaz/disenos/` (`"pink_palace"`, `"exploracion"`, `"libreta"`, `"puerta"`). Si no tiene, `pink_palace` |
+| `espejo` | No | `true` voltea de izquierda a derecha el `fondo` dibujado. Se usa con el diseño `exploracion_derecha` para que la acción quede a la izquierda y el texto a la derecha |
+| `diseno` | No | Cómo se ve la escena: un archivo de `interfaz/disenos/` (`"pink_palace"`, `"exploracion"`, `"exploracion_derecha"`, `"libreta"`, `"puerta"`). Si no tiene, `pink_palace` |
 | `titulo_escena` | No | Título arriba del texto. Si no tiene, se usa el título del capítulo |
 | `pregunta` | No | Lo que dice arriba de las opciones, acorde a la escena (ej. `"¿CÓMO LA ABRES?"`). Si no tiene, `"¿QUE DECIDES HACER?"` |
 | `mostrar_personaje` | No | `false` para ocultar a Coraline (solo en los diseños que la dibujan). Por defecto `true` |

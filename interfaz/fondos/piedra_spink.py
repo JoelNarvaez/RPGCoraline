@@ -15,6 +15,7 @@ from interfaz.fondos.pintura import capa_vacia, pegar_con_contorno
 from interfaz.fondos.pintura import mezclar, orillas_oscuras, mostrar
 from interfaz.fondos import personajes
 from interfaz.fondos import sala_actrices
+from interfaz.fondos import piedra as piedra_agujero
 
 X_CORALINE = 432
 X_SPINK = 522
@@ -22,7 +23,6 @@ X_SPINK = 522
 COMODA = pygame.Rect(570, 214, 64, 86)
 
 COLOR_MADERA = (104, 62, 40)
-COLOR_PIEDRA = (150, 150, 140)
 
 CAPAS = {}
 
@@ -68,14 +68,11 @@ def piedra() -> tuple:
 
 def dibujar_piedra(lienzo: pygame.Surface) -> None:
 
-    """PIEDRA GRIS REDONDEADA CON EL AGUJERO EN MEDIO."""
+    """LA PIEDRA VERDE DE TRES ESQUINAS (piedra.py), COLGANDO DE SU CORDON NEGRO."""
 
     x, y = piedra()
 
-    pygame.draw.ellipse(lienzo, COLOR_PIEDRA, (x - 6, y - 5, 13, 10))
-    pygame.draw.ellipse(lienzo, mezclar(COLOR_PIEDRA, (0, 0, 0), 0.3), (x - 6, y - 5, 13, 10), 1)
-    pygame.draw.circle(lienzo, (40, 30, 34), (x, y), 2)
-    pygame.draw.line(lienzo, (200, 200, 190), (x - 4, y - 3), (x - 1, y - 4))
+    piedra_agujero.dibujar_piedra(lienzo, x, y, 2, 3, 6)
 
 
 def crear_fijo() -> pygame.Surface:

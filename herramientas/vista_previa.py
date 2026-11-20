@@ -62,8 +62,8 @@ def guardar_captura(nombre_nodo: str) -> None:
 def abrir_ventana(nombre_nodo: str) -> None:
     """Abre el juego normal, pero empezando en la escena pedida."""
     pygame.init()
-    ventana: pygame.Surface = pygame.display.set_mode((config.ANCHO, config.ALTO))
     pygame.display.set_caption(config.TITULO + " - " + nombre_nodo)
+    ventana: pygame.Surface = juego_principal.crear_ventana()
     reloj: pygame.time.Clock = pygame.time.Clock()
     contexto: dict = preparar(nombre_nodo)
 

@@ -1315,7 +1315,9 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
 
     pose: "normal" (manos juntas al frente), "charola" (carga el pollo asado),
     "despedir" (el brazo que saluda se dibuja aparte con dibujar_brazo_saludo)
-    o "brazos_abiertos" (recibe a Coraline con los brazos estirados).
+    "brazos_abiertos" (recibe a Coraline con los brazos estirados), "escarabajo"
+    (enojada, con la bolsita de papel y la mano en la boca; el escarabajo va aparte)
+    o "brazos_cruzados" (cap. 9, esperandola en el pasto).
     """
 
     sombra = pygame.Surface((50, 8), pygame.SRCALPHA)
@@ -1385,6 +1387,28 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
                 pygame.draw.line(lienzo, OTRA_PIEL, (mano[0] + lado * 2, mano[1] - 2 + i * 2),
                                  (mano[0] + lado * 6, mano[1] - 5 + i * 2))
 
+    elif pose == "brazos_cruzados":
+        # CAP. 9: LOS BRAZOS CRUZADOS SOBRE EL CORPINO, CON LOS DEDOS LARGOS ASOMANDO EN LOS CODOS
+        pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (x + 13, 184), (x + 16, 198), 3)
+        pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (x + 16, 198), (x - 12, 194), 3)
+        pygame.draw.line(lienzo, OTRA_PIEL, (x - 13, 184), (x - 16, 194), 3)
+        pygame.draw.line(lienzo, OTRA_PIEL, (x - 16, 194), (x + 12, 199), 3)
+        for lado in [-1, 1]:
+            for i in range(3):
+                pygame.draw.line(lienzo, OTRA_PIEL, (x + lado * 12, 193 + i * 2 + (lado > 0) * 4),
+                                 (x + lado * 17, 192 + i * 2 + (lado > 0) * 4))
+
+    elif pose == "escarabajo":
+        # CAP. 6: CON LA IZQUIERDA CARGA LA BOLSITA DE PAPEL; LA DERECHA SUBE A LA BOCA
+        # (LA MANO SE DIBUJA AL FINAL, ENCIMA DE LA CARA; EL ESCARABAJO LO PONE LA ESCENA)
+        pygame.draw.line(lienzo, OTRA_PIEL, (x - 13, 184), (x - 18, 210), 3)
+        pygame.draw.polygon(lienzo, (196, 160, 110), [(x - 25, 208), (x - 13, 208), (x - 12, 224), (x - 26, 224)])
+        pygame.draw.polygon(lienzo, (160, 126, 84), [(x - 25, 208), (x - 13, 208), (x - 15, 205), (x - 23, 205)])
+        pygame.draw.line(lienzo, (150, 116, 76), (x - 22, 212), (x - 21, 222))
+        pygame.draw.ellipse(lienzo, OTRA_PIEL, (x - 21, 207, 6, 6))
+        pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (x + 13, 182), (x + 24, 176), 3)
+        pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (x + 24, 176), mano_escarabajo(x), 3)
+
     else:
         # MANOS JUNTAS ABAJO, AL FRENTE DE LA FALDA
         pygame.draw.line(lienzo, OTRA_PIEL, (x - 13, 184), (x - 6, 214), 3)
@@ -1411,9 +1435,14 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
     pygame.draw.polygon(lienzo, OTRA_PIEL, [(x - 8, 152), (x + 8, 152), (x, 161)])
     pygame.draw.polygon(lienzo, OTRA_PIEL_SOMBRA, [(x + 6, 136), (x + 11, 144), (x + 8, 154), (x + 2, 160), (x + 6, 150)])
 
-    # CEJAS FINAS Y ARQUEADAS, CHAPITAS, NARICITA, SONRISA ROJA Y LUNAR
-    pygame.draw.arc(lienzo, (60, 30, 30), (x - 10, 138, 8, 4), 0.3, 2.8, 1)
-    pygame.draw.arc(lienzo, (60, 30, 30), (x + 2, 138, 8, 4), 0.3, 2.8, 1)
+    # CEJAS FINAS Y ARQUEADAS (FRUNCIDAS SI ESTA ENOJADA), CHAPITAS, NARICITA, SONRISA ROJA Y LUNAR
+    if pose == "escarabajo":
+        pygame.draw.line(lienzo, (60, 30, 30), (x - 10, 138), (x - 3, 141))
+        pygame.draw.line(lienzo, (60, 30, 30), (x + 10, 138), (x + 3, 141))
+    else:
+        pygame.draw.arc(lienzo, (60, 30, 30), (x - 10, 138, 8, 4), 0.3, 2.8, 1)
+        pygame.draw.arc(lienzo, (60, 30, 30), (x + 2, 138, 8, 4), 0.3, 2.8, 1)
+
     pygame.draw.circle(lienzo, (236, 140, 130), (x - 7, 152), 2)
     pygame.draw.circle(lienzo, (236, 140, 130), (x + 7, 152), 2)
     lienzo.set_at((x, 151), OTRA_PIEL_SOMBRA)
@@ -1435,13 +1464,28 @@ def dibujar_otra_madre(lienzo: pygame.Surface, x: int, pose: str) -> None:
     pygame.draw.line(lienzo, OTRA_PELO_BRILLO, (x + 15, 138), (x + 15, 148))
     pygame.draw.line(lienzo, OTRA_PELO_BRILLO, (x + 6, 125), (x - 6, 133))
 
+    # LA MANO QUE SUBE A LA BOCA VA ENCIMA DE LA CARA
+    if pose == "escarabajo":
+        mano = mano_escarabajo(x)
+        pygame.draw.ellipse(lienzo, OTRA_PIEL, (mano[0] - 3, mano[1] - 3, 7, 7))
+        for i in range(3):                                                     # dedos largos hacia la boca
+            pygame.draw.line(lienzo, OTRA_PIEL_SOMBRA, (mano[0] - 2 + i * 2, mano[1] - 2), (mano[0] - 4 + i * 2, mano[1] - 6))
+
+
+def mano_escarabajo(x: int) -> tuple:
+
+    """DONDE QUEDA LA MANO DE LA OTRA MADRE CUANDO SE COME EL ESCARABAJO (JUNTO A LA BOCA)."""
+
+    return (x + 6, 160)
+
 
 def dibujar_otro_padre(lienzo: pygame.Surface, x: int, pose: str) -> None:
 
     """EL OTRO PADRE DE FRENTE, CON SU BATA NARANJA. LOS BOTONES VAN APARTE.
 
-    pose: "normal" (rascandose la cabeza y una mano en la cintura) o "despedir"
-    (el brazo de arriba se dibuja aparte, moviendose, con dibujar_brazo_saludo).
+    pose: "normal" (rascandose la cabeza y una mano en la cintura), "despedir"
+    (el brazo de arriba se dibuja aparte, moviendose, con dibujar_brazo_saludo)
+    o "quieto" (cap. 6: los dos brazos colgando y sin sonreir, como apagado).
     """
 
     sombra = pygame.Surface((56, 8), pygame.SRCALPHA)
@@ -1484,14 +1528,23 @@ def dibujar_otro_padre(lienzo: pygame.Surface, x: int, pose: str) -> None:
     pygame.draw.line(lienzo, PADRE_ORILLAS, (x - 10, 203), (x - 12, 222), 3)
     pygame.draw.line(lienzo, PADRE_ORILLAS, (x - 7, 203), (x - 6, 218), 3)
 
-    # BRAZO EN LA CINTURA (MANGA NARANJA, PUNO OSCURO, MANO)
-    pygame.draw.line(lienzo, PADRE_BATA, (x - 14, 164), (x - 26, 186), 7)
-    pygame.draw.line(lienzo, PADRE_BATA, (x - 26, 186), (x - 18, 198), 6)
-    pygame.draw.line(lienzo, PADRE_ORILLAS, (x - 23, 192), (x - 18, 198), 7)
-    pygame.draw.ellipse(lienzo, PADRE_PIEL, (x - 18, 196, 8, 8))
+    if pose == "quieto":
+        # LOS DOS BRAZOS COLGANDO, SIN GANAS (MANGA, PUNO OSCURO Y MANO)
+        for lado in [-1, 1]:
+            manga = PADRE_BATA if lado < 0 else PADRE_BATA_SOMBRA
+            pygame.draw.line(lienzo, manga, (x + lado * 14, 164), (x + lado * 19, 204), 7)
+            pygame.draw.line(lienzo, PADRE_ORILLAS, (x + lado * 19, 202), (x + lado * 20, 210), 7)
+            pygame.draw.ellipse(lienzo, PADRE_PIEL, (x + lado * 20 - 4, 210, 8, 8))
+
+    else:
+        # BRAZO EN LA CINTURA (MANGA NARANJA, PUNO OSCURO, MANO)
+        pygame.draw.line(lienzo, PADRE_BATA, (x - 14, 164), (x - 26, 186), 7)
+        pygame.draw.line(lienzo, PADRE_BATA, (x - 26, 186), (x - 18, 198), 6)
+        pygame.draw.line(lienzo, PADRE_ORILLAS, (x - 23, 192), (x - 18, 198), 7)
+        pygame.draw.ellipse(lienzo, PADRE_PIEL, (x - 18, 196, 8, 8))
 
     # BRAZO DE ARRIBA, RASCANDOSE LA CABEZA (CUANDO SE DESPIDE SE DIBUJA APARTE)
-    if pose != "despedir":
+    if pose == "normal":
         pygame.draw.line(lienzo, PADRE_BATA_SOMBRA, (x + 14, 164), (x + 28, 140), 7)
         pygame.draw.line(lienzo, PADRE_ORILLAS, (x + 27, 142), (x + 24, 134), 8)
         pygame.draw.line(lienzo, PADRE_PIEL_SOMBRA, (x + 24, 134), (x + 14, 120), 3)
@@ -1504,9 +1557,15 @@ def dibujar_otro_padre(lienzo: pygame.Surface, x: int, pose: str) -> None:
     pygame.draw.ellipse(lienzo, PADRE_PIEL, (x - 10, 120, 20, 30))
     pygame.draw.ellipse(lienzo, PADRE_PIEL_SOMBRA, (x + 4, 126, 6, 22))
 
-    # NARIZ LARGA Y SONRISA GRANDE
+    # NARIZ LARGA Y SONRISA GRANDE (QUIETO: BOCA PLANA CON LAS PUNTAS HACIA ABAJO)
     pygame.draw.polygon(lienzo, PADRE_PIEL_SOMBRA, [(x, 134), (x + 3, 143), (x - 1, 143)])
-    pygame.draw.arc(lienzo, (120, 50, 50), (x - 6, 140, 13, 7), 3.3, 6.1, 2)
+
+    if pose == "quieto":
+        pygame.draw.line(lienzo, (120, 50, 50), (x - 3, 145), (x + 4, 145))
+        lienzo.set_at((x - 4, 146), (120, 50, 50))
+        lienzo.set_at((x + 5, 146), (120, 50, 50))
+    else:
+        pygame.draw.arc(lienzo, (120, 50, 50), (x - 6, 140, 13, 7), 3.3, 6.1, 2)
 
     # LENTES NEGROS (LOS BOTONES QUEDAN ADENTRO)
     for ojo_x, ojo_y in ojos_otro_padre(x):

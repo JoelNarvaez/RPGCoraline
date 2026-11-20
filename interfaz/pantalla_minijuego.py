@@ -25,6 +25,8 @@ from interfaz.minijuegos import presionar
 from interfaz.minijuegos import recorrido
 from interfaz.minijuegos import taza_te
 from interfaz.minijuegos import llave_puerta
+from interfaz.minijuegos import canicas_piedra
+from interfaz.minijuegos import escalera_sotano
 
 # Cada tipo de minijuego y el módulo que lo maneja
 MODULOS: dict = {
@@ -36,6 +38,8 @@ MODULOS: dict = {
     "recorrido": recorrido,
     "taza_te": taza_te,
     "llave_puerta": llave_puerta,
+    "canicas_piedra": canicas_piedra,
+    "escalera_sotano": escalera_sotano,
 }
 TITULOS: dict = {
     "clic": "Explora",
@@ -46,6 +50,8 @@ TITULOS: dict = {
     "recorrido": "Recorre la casa",
     "taza_te": "Lee las hojas",
     "llave_puerta": "Abre la puerta",
+    "canicas_piedra": "Busca con la piedra",
+    "escalera_sotano": "Sube sin que te oiga",
 }
 
 

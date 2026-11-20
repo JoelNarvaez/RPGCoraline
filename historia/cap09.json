@@ -5,6 +5,11 @@
   "nodos": {
     "cap09_n01": {
       "texto": "Afuera, la casa parece una imitación torcida de sí misma. La otra madre la espera en el pasto con los brazos cruzados y le ofrece, con voz melosa, una pequeña pista para su búsqueda.",
+      "diseno": "exploracion_derecha",
+      "fondo": "casa_torcida",
+      "espejo": true,
+      "titulo_escena": "Una imitación torcida",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -27,11 +32,15 @@
             }
           }
         }
-      ],
-      "imagen": "casa.jpg"
+      ]
     },
     "cap09_r01": {
       "texto": "[ESQUELETO DE RAMA] La pista la manda al jardín, donde no hay nada. Coraline pierde tiempo y se da cuenta del engaño. Regresa a la casa.",
+      "diseno": "exploracion_derecha",
+      "fondo": "casa_torcida",
+      "espejo": true,
+      "titulo_escena": "Una pista falsa",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -44,11 +53,14 @@
             }
           }
         }
-      ],
-      "imagen": "casa.jpg"
+      ]
     },
     "cap09_n02": {
       "texto": "Entra al departamento de los otros padres buscando a los suyos. Silba para darse valor. Cocina vacía, baño vacío... Al fondo del pasillo hay una puerta que baja al sótano.",
+      "diseno": "exploracion",
+      "fondo": "pasillo_sotano",
+      "titulo_escena": "La puerta del sótano",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -67,11 +79,14 @@
           "destino": "cap09_r02",
           "canonica": false
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap09_r02": {
       "texto": "[ESQUELETO DE RAMA] El otro cuarto está vacío; hasta los juguetes se fueron. Solo queda la puerta del sótano.",
+      "diseno": "exploracion",
+      "fondo": "pasillo_sotano",
+      "titulo_escena": "Hasta los juguetes se fueron",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -85,11 +100,14 @@
             }
           }
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap09_n03": {
       "texto": "El sótano huele a vino agrio y pan podrido. Debajo de un montón de cortinas viejas asoma un pie. Es el otro padre, o lo que queda de él: una masa blanca y blanda con dos botones.",
+      "diseno": "exploracion",
+      "fondo": "sotano",
+      "titulo_escena": "El sótano",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -107,11 +125,14 @@
             }
           }
         }
-      ],
-      "imagen": "sotano.jpg"
+      ]
     },
     "cap09_r03": {
       "texto": "[ESQUELETO DE RAMA] Coraline se tropieza en el tercer escalón. La cosa la oye y se levanta. No hay más remedio que quedarse y hablarle.",
+      "diseno": "exploracion",
+      "fondo": "sotano",
+      "titulo_escena": "El tercer escalón",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -119,11 +140,14 @@
           "destino": "cap09_n04",
           "canonica": true
         }
-      ],
-      "imagen": "sotano.jpg"
+      ]
     },
     "cap09_n04": {
       "texto": "El otro padre le pide perdón: la otra madre lo castigó por platicar con ella, y ahora lo obliga a hacerle daño. Se le cae uno de los botones. Coraline le acaricia la cabeza: él solo es algo que ella hizo y luego tiró.",
+      "diseno": "exploracion",
+      "fondo": "padre_derretido",
+      "titulo_escena": "Lo que queda del otro padre",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -136,11 +160,14 @@
           "destino": "cap09_r04",
           "canonica": false
         }
-      ],
-      "imagen": "sotano.jpg"
+      ]
     },
     "cap09_r04": {
       "texto": "[ESQUELETO DE RAMA] El otro padre balbucea que no lo sabe, que ella nunca le cuenta nada. Coraline empieza a subir despacio.",
+      "diseno": "exploracion",
+      "fondo": "padre_derretido",
+      "titulo_escena": "Ella nunca le cuenta nada",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -148,21 +175,20 @@
           "destino": "cap09_m01",
           "canonica": true
         }
-      ],
-      "imagen": "sotano.jpg"
+      ]
     },
     "cap09_m01": {
       "texto": "El otro padre ya no puede resistir la orden. Se lanza a ciegas por todo el sótano, buscando a Coraline con las manos.",
+      "diseno": "exploracion",
+      "fondo": "sotano_cazando",
+      "titulo_escena": "A ciegas",
+      "pregunta": "¿TE ANIMAS?",
       "canonico": true,
-      "imagen": "sotano.jpg",
       "opciones": [],
       "minijuego": {
-        "tipo": "esquivar",
-        "instruccion": "Esquiva al otro padre durante 12 segundos. Te persigue, así que no te quedes quieta.",
-        "tiempo": 12,
-        "cantidad": 2,
-        "enemigo": "otro_padre",
-        "persiguen": true,
+        "tipo": "escalera_sotano",
+        "instruccion": "Mantén presionado Espacio (o el clic) para subir la escalera. El otro padre no ve, pero oye: cuando se detenga a escuchar, suelta y quédate quieta. Si te oye, se lanza y resbalas. Tienes 3 vidas.",
+        "tiempo": 30,
         "exito": {
           "destino": "cap09_n05",
           "efectos": {
@@ -183,6 +209,11 @@
     },
     "cap09_n05": {
       "texto": "La criatura se lanza hacia ella a ciegas. Coraline se queda muy quieta, después sube a toda velocidad y cierra la puerta. Afuera, el mundo está gris y vacío. Se dice a sí misma que es valiente y se esfuerza por creerlo.",
+      "diseno": "exploracion_derecha",
+      "fondo": "mundo_gris",
+      "espejo": true,
+      "titulo_escena": "Un mundo gris",
+      "pregunta": "¿A DÓNDE VAS?",
       "canonico": true,
       "opciones": [
         {
@@ -205,11 +236,15 @@
             }
           }
         }
-      ],
-      "imagen": "niebla.jpg"
+      ]
     },
     "cap09_r05": {
       "texto": "[ESQUELETO DE RAMA] Coraline se sienta bajo un árbol que parece de papel. El tiempo corre en su contra. Se levanta y va al ático.",
+      "diseno": "exploracion_derecha",
+      "fondo": "mundo_gris",
+      "espejo": true,
+      "titulo_escena": "Un árbol de papel",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -222,8 +257,7 @@
             }
           }
         }
-      ],
-      "imagen": "niebla.jpg"
+      ]
     }
   }
 }

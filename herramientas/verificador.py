@@ -35,7 +35,8 @@ from interfaz import pantalla_juego
 
 TOTAL_DECISIONES: int = 300
 DECISIONES_CANONICAS: int = 70
-TIPOS_MINIJUEGO: list = ["clic", "arrastrar", "buscar", "esquivar", "presionar", "recorrido", "taza_te", "llave_puerta"]
+TIPOS_MINIJUEGO: list = ["clic", "arrastrar", "buscar", "esquivar", "presionar", "recorrido", "taza_te", "llave_puerta",
+                              "canicas_piedra", "escalera_sotano"]
 
 
 def destinos_de(nodo: dict) -> list:

@@ -126,8 +126,27 @@ def crear_contexto() -> dict:
     return contexto
 
 
+def crear_ventana() -> pygame.Surface:
+    """Abre la ventana del juego.
+
+    Se dibuja siempre en ANCHO x ALTO; con SCALED, pygame lo agranda al tamaño
+    de la pantalla sin deformarlo y acomoda solo la posición del mouse.
+    """
+
+    opciones: int = pygame.SCALED
+    if config.PANTALLA_COMPLETA:
+        opciones = opciones | pygame.FULLSCREEN
+
+    return pygame.display.set_mode((config.ANCHO, config.ALTO), opciones)
+
+
 def manejar_evento(evento: pygame.event.Event, contexto: dict) -> None:
     """Le pasa el evento a la pantalla actual."""
+
+    # F11 CAMBIA ENTRE PANTALLA COMPLETA Y VENTANA, EN CUALQUIER PANTALLA
+    if evento.type == pygame.KEYDOWN and evento.key == pygame.K_F11:
+        pygame.display.toggle_fullscreen()
+        return
 
     pantalla: str = contexto["pantalla"]
     siguiente: str = ""
@@ -221,11 +240,9 @@ def main() -> None:
 
     pygame.init()
 
-    ventana: pygame.Surface = pygame.display.set_mode(
-        (config.ANCHO, config.ALTO)
-    )
-
     pygame.display.set_caption(config.TITULO)
+
+    ventana: pygame.Surface = crear_ventana()
 
     reloj: pygame.time.Clock = pygame.time.Clock()
 

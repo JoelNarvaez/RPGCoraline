@@ -20,6 +20,9 @@ TITULO: str = "Coraline"
 ANCHO: int = 1280
 ALTO: int = 720
 FPS: int = 60
+# True: el juego abre en pantalla completa (se agranda a la pantalla sin
+# deformarse). F11 cambia entre pantalla completa y ventana mientras se juega.
+PANTALLA_COMPLETA: bool = True
 
 # Colores (R, G, B)
 COLOR_FONDO: tuple = (18, 16, 32)

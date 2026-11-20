@@ -34,9 +34,12 @@ RATAS = [(412, Y_PISO - 2, True), (548, 150, False), (530, Y_PISO - 2, False)]
 CAPAS = {}
 
 
-def dibujar_cuarto(lienzo: pygame.Surface) -> None:
+def dibujar_cuarto(lienzo: pygame.Surface, con_baul: bool = True) -> None:
 
-    """PARED AZUL CON ESTRELLAS, REPISAS CON JUGUETES, BAUL, PUERTA Y TAPETE."""
+    """PARED AZUL CON ESTRELLAS, REPISAS CON JUGUETES, BAUL, PUERTA Y TAPETE.
+
+    con_baul en False deja el cuarto sin el baul parado (en el cap. 8 esta volteado).
+    """
 
     degradado(lienzo, pygame.Rect(0, 0, ANCHO, Y_PISO), (40, 52, 110), COLOR_PARED, 14)
 
@@ -78,6 +81,9 @@ def dibujar_cuarto(lienzo: pygame.Surface) -> None:
 
     for i, color in enumerate([(220, 90, 90), (240, 200, 90), (90, 170, 120), (90, 130, 210)]):
         pygame.draw.ellipse(lienzo, color, (400 + i * 12, 296 + i * 4, 200 - i * 24, 46 - i * 8))
+
+    if not con_baul:
+        return
 
     # BAUL DE JUGUETES ABIERTO
     pygame.draw.rect(lienzo, (150, 70, 50), BAUL)

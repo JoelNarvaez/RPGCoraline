@@ -5,6 +5,10 @@
   "nodos": {
     "cap06_n01": {
       "texto": "Despierta en el otro cuarto con el sol en la cara y, por un momento, no sabe quién es. En el armario hay ropa maravillosa: pantalones de terciopelo negro, un suéter gris lleno de estrellitas y unas botas naranjas brillantes.",
+      "diseno": "exploracion",
+      "fondo": "cuarto_manana",
+      "titulo_escena": "Ropa maravillosa",
+      "pregunta": "¿QUÉ TE PONES?",
       "canonico": true,
       "opciones": [
         {
@@ -22,11 +26,14 @@
             }
           }
         }
-      ],
-      "imagen": "cuarto.jpg"
+      ]
     },
     "cap06_r01": {
       "texto": "[ESQUELETO DE RAMA] Con su bata vieja, Coraline se siente más ella misma. Se guarda la piedra en el bolsillo y sale.",
+      "diseno": "exploracion",
+      "fondo": "cuarto_manana",
+      "titulo_escena": "Su bata de siempre",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -34,11 +41,15 @@
           "destino": "cap06_n02",
           "canonica": true
         }
-      ],
-      "imagen": "cuarto.jpg"
+      ]
     },
     "cap06_n02": {
       "texto": "Detrás de la casa el mundo se acaba: más allá solo hay una blancura sin forma, sin olor y sin sonido. El gato le explica que la otra madre solo hizo lo que alcanza a ver desde la casa.",
+      "diseno": "exploracion_derecha",
+      "fondo": "fin_del_mundo",
+      "espejo": true,
+      "titulo_escena": "Donde se acaba el mundo",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -57,11 +68,15 @@
           "destino": "cap06_r02",
           "canonica": false
         }
-      ],
-      "imagen": "niebla.jpg"
+      ]
     },
     "cap06_r02": {
       "texto": "[ESQUELETO DE RAMA] Coraline no se atreve. El gato se encoge de hombros, a su manera, y camina solo hacia la nada. Al rato vuelve por el otro lado de la casa.",
+      "diseno": "exploracion_derecha",
+      "fondo": "fin_del_mundo",
+      "espejo": true,
+      "titulo_escena": "La orilla de la nada",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -75,11 +90,15 @@
             }
           }
         }
-      ],
-      "imagen": "niebla.jpg"
+      ]
     },
     "cap06_n03": {
       "texto": "Caminan en línea recta... y vuelven a la casa por el otro lado. Adentro, el otro padre está sentado en su estudio sin hacer nada. Le susurra que no debe platicar con ella cuando la otra madre no está, y que ella está tapando todas las entradas.",
+      "diseno": "exploracion_derecha",
+      "fondo": "estudio_otro_padre",
+      "espejo": true,
+      "titulo_escena": "El estudio vacío",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -102,11 +121,15 @@
             }
           }
         }
-      ],
-      "imagen": "casa.jpg"
+      ]
     },
     "cap06_r03": {
       "texto": "[ESQUELETO DE RAMA] El otro padre abre la boca, pero de ella no sale nada. Se tapa la cara con las manos. Coraline va a buscar al gato.",
+      "diseno": "exploracion_derecha",
+      "fondo": "estudio_otro_padre",
+      "espejo": true,
+      "titulo_escena": "Una boca sin palabras",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -119,11 +142,14 @@
             }
           }
         }
-      ],
-      "imagen": "casa.jpg"
+      ]
     },
     "cap06_n04": {
       "texto": "La otra madre la encuentra frente al espejo del pasillo. Le propone jugar a lo que ella quiera: avión, rompecabezas, lo que sea. Coraline le contesta que quiere ir a casa con sus verdaderos padres.",
+      "diseno": "exploracion",
+      "fondo": "espejo_otra_madre",
+      "titulo_escena": "Frente al espejo",
+      "pregunta": "¿QUÉ LE CONTESTAS?",
       "canonico": true,
       "opciones": [
         {
@@ -146,11 +172,14 @@
             }
           }
         }
-      ],
-      "imagen": "espejo.jpg"
+      ]
     },
     "cap06_r04": {
       "texto": "[ESQUELETO DE RAMA] Coraline juega sin ganas. La otra madre se da cuenta del engaño y sus botones se oscurecen todavía más.",
+      "diseno": "exploracion",
+      "fondo": "espejo_otra_madre",
+      "titulo_escena": "Un juego sin ganas",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -163,11 +192,14 @@
             }
           }
         }
-      ],
-      "imagen": "espejo.jpg"
+      ]
     },
     "cap06_n05": {
       "texto": "La otra madre se enfurece. Saca un escarabajo de una bolsita de papel y se lo come. Luego toma a Coraline del brazo y la empuja a un hueco oscuro detrás del espejo, hasta que aprenda a ser una hija cariñosa.",
+      "diseno": "exploracion",
+      "fondo": "escarabajo_espejo",
+      "titulo_escena": "Detrás del espejo",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -191,11 +223,14 @@
             }
           }
         }
-      ],
-      "imagen": "espejo.jpg"
+      ]
     },
     "cap06_r05": {
       "texto": "[ESQUELETO DE RAMA] La otra madre no la escucha y cierra el espejo de todos modos. La disculpa solo le dejó a Coraline un sabor amargo.",
+      "diseno": "exploracion",
+      "fondo": "escarabajo_espejo",
+      "titulo_escena": "Una disculpa amarga",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -209,8 +244,7 @@
             }
           }
         }
-      ],
-      "imagen": "espejo.jpg"
+      ]
     }
   }
 }

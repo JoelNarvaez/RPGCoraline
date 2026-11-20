@@ -5,6 +5,11 @@
   "nodos": {
     "cap08_n01": {
       "texto": "La otra madre la saca del espejo y la sienta a la mesa con un desayuno increíble. Coraline le pregunta, como sin querer, si le gustan los juegos. Los botones de la otra madre brillan de emoción.",
+      "diseno": "exploracion_derecha",
+      "fondo": "desayuno_otra_madre",
+      "espejo": true,
+      "titulo_escena": "Un desayuno increíble",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -22,11 +27,15 @@
           "destino": "cap08_r01",
           "canonica": false
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap08_r01": {
       "texto": "[ESQUELETO DE RAMA] Coraline come sin decir nada. La otra madre se aburre y empieza a hablar de juegos ella sola. Es la oportunidad perfecta.",
+      "diseno": "exploracion_derecha",
+      "fondo": "desayuno_otra_madre",
+      "espejo": true,
+      "titulo_escena": "Comer en silencio",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -39,11 +48,15 @@
             }
           }
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap08_n02": {
       "texto": "Coraline pone las reglas: si encuentra a sus padres y las almas de los niños fantasma, todos se van libres. Si pierde, se queda para siempre y deja que le cosan los botones. La otra madre acepta y lo jura.",
+      "diseno": "exploracion_derecha",
+      "fondo": "trato_juego",
+      "espejo": true,
+      "titulo_escena": "El trato",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -56,11 +69,15 @@
           "destino": "cap08_r02",
           "canonica": false
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap08_r02": {
       "texto": "[ESQUELETO DE RAMA] La otra madre le dice, divertida, que una pista arruinaría el juego. Coraline no insiste y empieza a buscar.",
+      "diseno": "exploracion_derecha",
+      "fondo": "trato_juego",
+      "espejo": true,
+      "titulo_escena": "Sin pistas",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -68,19 +85,20 @@
           "destino": "cap08_m01",
           "canonica": true
         }
-      ],
-      "imagen": "cocina.jpg"
+      ]
     },
     "cap08_m01": {
       "texto": "Coraline vacía la caja de juguetes sobre la alfombra. Hay canicas por todos lados, pero solo una guarda un alma. La piedra con agujero le dirá cuál.",
+      "diseno": "exploracion",
+      "fondo": "caja_juguetes",
+      "titulo_escena": "La caja de juguetes",
+      "pregunta": "¿TE ANIMAS?",
       "canonico": true,
-      "imagen": "cuarto.jpg",
       "opciones": [],
       "minijuego": {
-        "tipo": "buscar",
-        "instruccion": "Mueve la piedra (el mouse) en la oscuridad y haz clic en la canica que brilla. Cada canica falsa te quita 3 segundos.",
+        "tipo": "canicas_piedra",
+        "instruccion": "La piedra con agujero es el mouse. Todo está a oscuras: muévela sobre el tapete y haz clic en la canica que arde como brasa. Cada canica falsa te quita 3 segundos.",
         "tiempo": 25,
-        "se_mueve": false,
         "senuelos": 8,
         "exito": {
           "destino": "cap08_n03"
@@ -97,6 +115,10 @@
     },
     "cap08_n03": {
       "texto": "Coraline sabe que afuera de la casa no hay nada real, así que busca adentro. Vacía la caja de juguetes del otro cuarto y mira todo a través de la piedra. Una canica gris, aburrida, arde como una brasa roja.",
+      "diseno": "exploracion",
+      "fondo": "vista_piedra",
+      "titulo_escena": "Una brasa roja",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -119,11 +141,14 @@
             ]
           }
         }
-      ],
-      "imagen": "cuarto.jpg"
+      ]
     },
     "cap08_r03": {
       "texto": "[ESQUELETO DE RAMA] En la cocina solo hay comida que huele demasiado bien. Coraline regresa al cuarto, mira por la piedra y encuentra la canica que brilla.",
+      "diseno": "exploracion",
+      "fondo": "vista_piedra",
+      "titulo_escena": "Comida que huele demasiado bien",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -136,11 +161,14 @@
             ]
           }
         }
-      ],
-      "imagen": "cuarto.jpg"
+      ]
     },
     "cap08_n04": {
       "texto": "Una vocecita le da las gracias: es el alma de uno de los niños. Coraline baja al teatro de las vecinas. Está abandonado y cubierto de telarañas. En el escenario se mueve algo enorme y pálido, hecho de dos cuerpos pegados.",
+      "diseno": "exploracion",
+      "fondo": "telarana_canica",
+      "titulo_escena": "El teatro abandonado",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -171,11 +199,14 @@
             ]
           }
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
     "cap08_r04": {
       "texto": "[ESQUELETO DE RAMA] La luz le enseña la criatura entera, y Coraline casi se desmaya. Aun así, mete la mano en la telaraña y saca la segunda canica.",
+      "diseno": "exploracion",
+      "fondo": "teatro_abandonado",
+      "titulo_escena": "La criatura entera",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -192,11 +223,14 @@
             ]
           }
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
     "cap08_n05": {
       "texto": "Los perros del público la miran sin moverse. Una voz de niña le grita en la cabeza que huya: ya tiene dos almas. Coraline guarda la segunda canica junto a la primera.",
+      "diseno": "exploracion",
+      "fondo": "huida_teatro",
+      "titulo_escena": "¡Huye!",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -214,11 +248,14 @@
             }
           }
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     },
     "cap08_r05": {
       "texto": "[ESQUELETO DE RAMA] Al acercarse, la criatura se mueve. Coraline cambia de idea y sale corriendo sin mirar atrás.",
+      "diseno": "exploracion",
+      "fondo": "huida_teatro",
+      "titulo_escena": "Sin mirar atrás",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -226,8 +263,7 @@
           "destino": "cap09_n01",
           "canonica": true
         }
-      ],
-      "imagen": "teatro.jpg"
+      ]
     }
   }
 }

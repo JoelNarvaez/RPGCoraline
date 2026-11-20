@@ -150,10 +150,17 @@ def fondo(
     nodo: dict
 ) -> None:
 
-    """MOSTRAMOS LA IMAGEN DE LA ESCENA, O SU FONDO DIBUJADO CON CODIGO."""
+    """MOSTRAMOS LA IMAGEN DE LA ESCENA, O SU FONDO DIBUJADO CON CODIGO.
+
+    Si el nodo tiene "espejo": true, el fondo dibujado se voltea de izquierda a
+    derecha (para que la accion quede a la izquierda y el texto a la derecha,
+    con el diseno exploracion_derecha).
+    """
 
     if "fondo" in nodo:
         fondos.FONDOS[nodo["fondo"]].dibujar(ventana)
+        if nodo.get("espejo", False):
+            ventana.blit(pygame.transform.flip(ventana, True, False), (0, 0))
         return
 
     nombre_imagen = nodo.get(

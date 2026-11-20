@@ -5,6 +5,11 @@
   "nodos": {
     "cap07_n01": {
       "texto": "Está encerrada en un espacio diminuto: apenas puede sentarse. Una de las paredes es de vidrio frío. No hay puerta ni manija. En la oscuridad, algo helado le roza la mano.",
+      "diseno": "exploracion_derecha",
+      "fondo": "hueco_espejo",
+      "espejo": true,
+      "titulo_escena": "Detrás del vidrio",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -31,6 +36,11 @@
     },
     "cap07_r01": {
       "texto": "[ESQUELETO DE RAMA] Coraline se queda quieta mucho rato. El roce se repite, suave, casi cariñoso. Al final pregunta quién está ahí.",
+      "diseno": "exploracion_derecha",
+      "fondo": "hueco_espejo",
+      "espejo": true,
+      "titulo_escena": "Un roce helado",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -47,6 +57,11 @@
     },
     "cap07_n02": {
       "texto": "Son tres niños fantasma, pálidos como nubes. Llevan muchísimo tiempo ahí. La otra madre los atrapó, a cada uno en su época: les dio todo lo que pedían y luego les quitó el alma y los dejó olvidados detrás del espejo.",
+      "diseno": "exploracion_derecha",
+      "fondo": "ninos_fantasma",
+      "espejo": true,
+      "titulo_escena": "Los niños fantasma",
+      "pregunta": "¿QUÉ LES DICES?",
       "canonico": true,
       "opciones": [
         {
@@ -68,6 +83,11 @@
     },
     "cap07_r02": {
       "texto": "[ESQUELETO DE RAMA] Los fantasmas se callan. El silencio es peor que sus voces. Coraline se arrepiente y les pide que le cuenten.",
+      "diseno": "exploracion_derecha",
+      "fondo": "ninos_fantasma",
+      "espejo": true,
+      "titulo_escena": "Un silencio peor",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -79,6 +99,11 @@
     },
     "cap07_n03": {
       "texto": "Uno usaba capa y peluca blanca; otra, una cofia antigua; el niño más pequeño ya ni recuerda su nombre. La otra madre les guardó el alma en algún lugar. Si alguien la encontrara, podrían irse por fin a donde van los demás.",
+      "diseno": "exploracion_derecha",
+      "fondo": "almas_perdidas",
+      "espejo": true,
+      "titulo_escena": "Las almas perdidas",
+      "pregunta": "¿QUÉ LES DICES?",
       "canonico": true,
       "opciones": [
         {
@@ -105,6 +130,11 @@
     },
     "cap07_r03": {
       "texto": "[ESQUELETO DE RAMA] Los fantasmas le dicen que nadie ha escapado nunca. Coraline siente vergüenza de haber pensado solo en ella. Les promete buscar sus almas.",
+      "diseno": "exploracion_derecha",
+      "fondo": "almas_perdidas",
+      "espejo": true,
+      "titulo_escena": "Nadie ha escapado",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -121,6 +151,11 @@
     },
     "cap07_n04": {
       "texto": "Los fantasmas le advierten que la otra madre siempre gana, y que ella terminará igual que ellos. A Coraline se le encoge el estómago, pero se acuerda de su papá y las avispas.",
+      "diseno": "exploracion_derecha",
+      "fondo": "advertencia_fantasmas",
+      "espejo": true,
+      "titulo_escena": "Ella siempre gana",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -147,6 +182,11 @@
     },
     "cap07_r04": {
       "texto": "[ESQUELETO DE RAMA] Coraline llora en silencio. Después se siente un poco más ligera, y decide que no se va a rendir.",
+      "diseno": "exploracion_derecha",
+      "fondo": "advertencia_fantasmas",
+      "espejo": true,
+      "titulo_escena": "Lágrimas en silencio",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {
@@ -163,6 +203,11 @@
     },
     "cap07_n05": {
       "texto": "Coraline se acomoda para dormir sobre su suéter doblado. Medio dormida, siente un beso ligero en la mejilla, y una vocecita muy lejana le dice al oído que mire a través de la piedra.",
+      "diseno": "exploracion_derecha",
+      "fondo": "beso_fantasma",
+      "espejo": true,
+      "titulo_escena": "Un beso en la oscuridad",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": true,
       "opciones": [
         {
@@ -189,6 +234,11 @@
     },
     "cap07_r05": {
       "texto": "[ESQUELETO DE RAMA] No ve nada todavía. Pero la piedra está tibia, como si estuviera viva. Coraline se duerme con ella en la mano.",
+      "diseno": "exploracion_derecha",
+      "fondo": "beso_fantasma",
+      "espejo": true,
+      "titulo_escena": "La piedra tibia",
+      "pregunta": "¿QUÉ HACES?",
       "canonico": false,
       "opciones": [
         {

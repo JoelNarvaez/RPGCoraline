@@ -45,6 +45,37 @@ from interfaz.fondos import espejo_padres
 from interfaz.fondos import valentia_gato
 from interfaz.fondos import bienvenida_otra_madre
 
+# CAPITULO 6: DETRAS DEL ESPEJO
+from interfaz.fondos import cuarto_manana
+from interfaz.fondos import fin_del_mundo
+from interfaz.fondos import estudio_otro_padre
+from interfaz.fondos import espejo_otra_madre
+from interfaz.fondos import escarabajo_espejo
+
+# CAPITULO 7: LOS NINOS FANTASMA
+from interfaz.fondos import hueco_espejo
+from interfaz.fondos import ninos_fantasma
+from interfaz.fondos import almas_perdidas
+from interfaz.fondos import advertencia_fantasmas
+from interfaz.fondos import beso_fantasma
+
+# CAPITULO 8: EL JUEGO
+from interfaz.fondos import desayuno_otra_madre
+from interfaz.fondos import trato_juego
+from interfaz.fondos import caja_juguetes
+from interfaz.fondos import vista_piedra
+from interfaz.fondos import teatro_abandonado
+from interfaz.fondos import telarana_canica
+from interfaz.fondos import huida_teatro
+
+# CAPITULO 9: EL SOTANO
+from interfaz.fondos import casa_torcida
+from interfaz.fondos import pasillo_sotano
+from interfaz.fondos import sotano
+from interfaz.fondos import padre_derretido
+from interfaz.fondos import sotano_cazando
+from interfaz.fondos import mundo_gris
+
 FONDOS = {
     "estudio_lluvioso": estudio_lluvioso,
     "salon_puerta": salon_puerta,
@@ -79,4 +110,35 @@ FONDOS = {
     "espejo_padres": espejo_padres,
     "valentia_gato": valentia_gato,
     "bienvenida_otra_madre": bienvenida_otra_madre,
+
+    # CAPITULO 6
+    "cuarto_manana": cuarto_manana,
+    "fin_del_mundo": fin_del_mundo,
+    "estudio_otro_padre": estudio_otro_padre,
+    "espejo_otra_madre": espejo_otra_madre,
+    "escarabajo_espejo": escarabajo_espejo,
+
+    # CAPITULO 7
+    "hueco_espejo": hueco_espejo,
+    "ninos_fantasma": ninos_fantasma,
+    "almas_perdidas": almas_perdidas,
+    "advertencia_fantasmas": advertencia_fantasmas,
+    "beso_fantasma": beso_fantasma,
+
+    # CAPITULO 8
+    "desayuno_otra_madre": desayuno_otra_madre,
+    "trato_juego": trato_juego,
+    "caja_juguetes": caja_juguetes,
+    "vista_piedra": vista_piedra,
+    "teatro_abandonado": teatro_abandonado,
+    "telarana_canica": telarana_canica,
+    "huida_teatro": huida_teatro,
+
+    # CAPITULO 9
+    "casa_torcida": casa_torcida,
+    "pasillo_sotano": pasillo_sotano,
+    "sotano": sotano,
+    "padre_derretido": padre_derretido,
+    "sotano_cazando": sotano_cazando,
+    "mundo_gris": mundo_gris,
 }
